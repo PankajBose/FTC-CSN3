@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<processors>
+    <processor name="LMCORegexChangerSSN" class="csn.solr.morphline.processor.RegexChanger">
+        <config>
+            <param name="changeTo" value="XXX-XX-XXXX" type="str"/>
+            <param name="inputField" value="comments" type="str"/>
+            <param name="outputField" value="redactedcomments" type="str"/>
+            <param name="regex" value="[0-9]{3}[-\s][0-9]{2}[-\s][0-9]{4}" type="str"/>
+        </config>
+        <description>
+            Replace all occurrences of the regex from the "inputField" to "changeTo" and put resulting text
+            into "outputField".
+        </description>
+    </processor>
+
+    <processor name="LMCORegexChangerCC" class="csn.solr.morphline.processor.RegexChanger">
+        <config>
+            <param name="changeTo" value="xxxx-xxxx-xxxx-xxxx" type="str"/>
+            <param name="inputField" value="redactedcomments" type="str"/>
+            <param name="outputField" value="redactedcomments" type="str"/>
+            <param name="regex"
+                   value="\b4[0-9]{12}(?:[0-9]{3})?\b|\b4\d{3}[ .#-]?\d{4}[ .#-]?\d{4}[ .#-]?\d{4}\b|\b5[1-5]\d{2}[ .#-]?\d{4}[ .#-]?\d{4}[ .#-]?\d{4}\b|\b6011[ .#-]?\d{4}[ .#-]?\d{4}[ .#-]?\d{4}\b|\b3[0,6,8]\d{12}\b|\b3[4,7]\d{13}\b|\b(?:2131|1800|35\d{3})\d{11}\b"
+                   type="str"/>
+        </config>
+        <description>
+            Replace all occurrences of the regex from the "inputField" to "changeTo" and put resulting text into
+            "outputField".
+        </description>
+    </processor>
+</processors>
