@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <schema name="CSN" version="1.5">
     <fields>
         <!-- Fields for CISMain, IDTMain, DNCMain collections -->
@@ -42,7 +42,7 @@
 
         <!-- CIS, IDT, DNC, Alerts -->
         <!--<field name="comments" result="dynamic" fallback-ref="comments"/>-->
-        <field name="comments" type="string"/>
+        <field name="comments" type="text_general"/>
 
         <!-- IDT Part II -->
         <!--<field name="comments2" result="dynamic" fallback-ref="comments2"/>-->
@@ -102,19 +102,19 @@
 
         <!-- IDT -->
         <!--<field name="thefttype" separator="|" result="dynamic" fallback-ref="thefttype"/>-->
-        <field name="thefttype" type="string" multiValued="true"/>
+        <field name="thefttype" type="string"/>
 
         <!-- IDT Part II-->
         <!--<field name="thefttypenav" separator="|" result="dynamic" fallback-ref="thefttype"/>-->
-        <field name="thefttypenav" type="string" multiValued="true"/>
+        <!--field name="thefttypenav" type="string"/-->
 
         <!-- IDT -->
         <!--<field name="theftsubtype" separator="|" result="dynamic" fallback-ref="theftsubtype"/>-->
-        <field name="theftsubtype" type="string" multiValued="true"/>
+        <field name="theftsubtype" type="string"/>
 
         <!-- IDT -->
         <!--<field name="harmsuffered" separator="|" result="dynamic" fallback-ref="harmsuffered"/>-->
-        <field name="harmsuffered" type="string" multiValued="true"/>
+        <field name="harmsuffered" type="string"/>
 
         <!-- CIS, IDT, DNC  -->
         <!--<field name="organization" result="dynamic" fallback-ref="organization" boundary-match="yes" fullsort="yes"/>-->
@@ -174,53 +174,53 @@
 
         <!-- CIS -->
         <!--<field name="topic" separator="|" result="dynamic" fallback-ref="topic"/>-->
-        <field name="topic" type="string" multiValued="true"/>
+        <field name="topic" type="string"/>
 
         <!-- CIS -->
         <!--<field name="topicnav" separator="|"/>-->
-        <field name="topicnav" type="string" multiValued="true"/>
+        <!--field name="topicnav" type="string"/-->
 
         <!-- CIS, IDT, DNC  -->
         <!--<field name="prodservicedesc" separator="|" result="dynamic" fallback-ref="prodservicedesc"/>-->
-        <field name="prodservicedesc" type="string" multiValued="true"/>
+        <field name="prodservicedesc" type="string"/>
 
         <!-- CIS, IDT, DNC -->
         <!--<field name="prodservicedescnav" separator="|"/>-->
-        <field name="prodservicedescnav" type="string" multiValued="true"/>
+        <!--field name="prodservicedescnav" type="string"/-->
 
         <!-- CIS -->
         <!--<field name="statute" separator="|" result="dynamic" fallback-ref="statute"/>-->
-        <field name="statute" type="string" multiValued="true"/>
+        <field name="statute" type="string"/>
 
         <!-- CIS -->
         <!--<field name="statutenav" separator="|"/>-->
-        <field name="statutenav" type="string" multiValued="true"/>
+        <!--field name="statutenav" type="string"/-->
 
         <!-- CIS -->
         <!--<field name="violation" separator="|" result="dynamic" fallback-ref="violation"/>-->
-        <field name="violation" type="string" multiValued="true"/>
+        <field name="violation" type="string"/>
 
         <!-- CIS -->
         <!--<field name="violationnav" separator="|"/>-->
-        <field name="violationnav" type="string" multiValued="true"/>
+        <!--field name="violationnav" type="string"/-->
 
         <!-- CIS -->
         <!--<field name="representativefname" index="no" separator="|"/>-->
-        <field name="representativefname" type="string" indexed="false" multiValued="true"/>
+        <field name="representativefname" type="string" indexed="false"/>
 
         <!-- CIS -->
         <!--<field name="representativelname" separator="|" result="dynamic" fallback-ref="representativelname"/>-->
-        <field name="representativelname" type="string" multiValued="true"/>
+        <field name="representativelname" type="string"/>
 
         <field name="repid" type="string"/>
 
         <!-- CIS -->
         <!--<field name="representativetitle" index="no" separator="|"/>-->
-        <field name="representativetitle" type="string" indexed="false" multiValued="true"/>
+        <field name="representativetitle" type="string" indexed="false"/>
 
         <!-- CIS -->
         <!--<field name="complainingcompany" separator="|" result="dynamic" fallback-ref="complainingcompany"/>-->
-        <field name="complainingcompany" type="string" multiValued="true"/>
+        <field name="complainingcompany" type="string"/>
 
         <!-- CIS, IDT Part II -->
         <!--<field name="complaintagainstcreditbureau" result="dynamic" fallback-ref="complaintagainstcreditbureau" separator="|"/>-->
@@ -232,7 +232,7 @@
 
         <!-- IDT Part II -->
         <!--<field name="lawviolationcodes" result="dynamic" fallback-ref="lawviolationcodes" separator="|"/>-->
-        <field name="lawviolationcodes" type="string" multiValued="true"/>
+        <field name="lawviolationcodes" type="string"/>
 
 
         <!-- start nested document -->
@@ -262,7 +262,7 @@
 
         <!-- IDT Part II -->
         <!--<field name="consumercitynav" separator="|"/>-->
-        <field name="consumercitynav" type="string"/>
+        <field name="consumercitynav" type="string" stored="false" multiValued="true"/>
 
         <!-- IDT Part II -->
         <!--<field name="consumerstate" separator="|" result="dynamic" fallback-ref="consumerstate"/>-->
@@ -270,14 +270,14 @@
 
         <!-- IDT Part II -->
         <!--<field name="consumerstatenav" separator="|"/>-->
-        <field name="consumerstatenav" type="string"/>
+        <field name="consumerstatenav" type="string" stored="false" multiValued="true"/>
 
         <!--<field name="consumerzip" separator="|" result="dynamic" fallback-ref="consumerzip"/>-->
         <field name="consumerzip" type="string"/>
 
         <!-- CIS, IDT, DNC, Alerts -->
         <!--<field name="consumerzipnav" separator="|"/>-->
-        <field name="consumerzipnav" type="string"/>
+        <field name="consumerzipnav" type="string" stored="false" multiValued="true"/>
 
         <!-- CIS, IDT, Alerts -->
         <!--<field name="consumercountry" separator="|" result="dynamic" fallback-ref="consumercountry"/>-->
@@ -327,7 +327,7 @@
 
         <!-- CIS -->
         <!--<field name="consumeragerangenav" separator="|"/>-->
-        <field name="consumeragerangenav" type="string"/>
+        <field name="consumeragerangenav" type="string" stored="false" multiValued="true"/>
 
         <!-- CIS, Alerts -->
         <!--<field name="consumercountrycode" separator="|" result="no"/>-->
@@ -561,7 +561,7 @@
 
         <!-- IDT Part II -->
         <!--<field name="primarycompanyzipnav" separator="|"/>-->
-        <field name="primarycompanyzipnav" type="string"/>
+        <field name="primarycompanyzipnav" type="string" stored="false" multiValued="true"/>
 
         <!-- CIS, IDT (suspectcompanycountry), Alerts -->
         <!--<field name="primarycompanycountry" separator="|" result="dynamic" fallback-ref="primarycompanycountry"/>-->
@@ -604,7 +604,7 @@
 
         <!-- IDT -->
         <!--<field name="associatedcompanynamenav" separator="|"/>-->
-        <field name="associatedcompanynamenav" type="string"/>
+        <field name="associatedcompanynamenav" type="string" stored="false" multiValued="true"/>
 
         <!-- IDT -->
         <!--<field name="associatedcompanybasename" separator="|" result="dynamic" fallback-ref="associatedcompanybasename"/>-->
@@ -612,7 +612,7 @@
 
         <!-- IDT -->
         <!--<field name="associatedcompanybasenamenav" separator="|"/>-->
-        <field name="associatedcompanybasenamenav" type="string"/>
+        <field name="associatedcompanybasenamenav" type="string" stored="false" multiValued="true"/>
 
         <!-- CIS, IDT -->
         <!--<field name="associatedcompanytype" separator="|" result="dynamic" fallback-ref="associatedcompanytype"/>-->
@@ -620,7 +620,7 @@
 
         <!-- IDT -->
         <!--<field name="associatedcompanytypenav" separator="|"/>-->
-        <field name="associatedcompanytypenav" type="string"/>
+        <field name="associatedcompanytypenav" type="string" stored="false" multiValued="true"/>
 
         <!-- CIS, IDT, Alerts -->
         <!--<field name="associatedcompanyaddr1" separator="|" result="dynamic" fallback-ref="associatedcompanyaddr1"/>-->
@@ -636,7 +636,7 @@
 
         <!-- IDT -->
         <!--<field name="associatedcompanycitynav" separator="|"/>-->
-        <field name="associatedcompanycitynav" type="string"/>
+        <field name="associatedcompanycitynav" type="string" stored="false" multiValued="true"/>
 
         <!-- CIS, IDT, Alerts -->
         <!--<field name="associatedcompanystate" separator="|" result="dynamic" fallback-ref="associatedcompanystate"/>-->
@@ -644,7 +644,7 @@
 
         <!-- IDT -->
         <!--<field name="associatedcompanystatenav" separator="|"/>-->
-        <field name="associatedcompanystatenav" type="string"/>
+        <field name="associatedcompanystatenav" type="string" stored="false" multiValued="true"/>
 
         <!-- CIS, IDT, Alerts -->
         <!--<field name="associatedcompanyzip" separator="|" result="dynamic" fallback-ref="associatedcompanyzip"/>-->
@@ -656,7 +656,7 @@
 
         <!-- IDT -->
         <!--<field name="associatedcompanycountrynav" separator="|"/>-->
-        <field name="associatedcompanycountrynav" type="string"/>
+        <field name="associatedcompanycountrynav" type="string" stored="false" multiValued="true"/>
 
         <!-- CIS, Alerts -->
         <!--<field name="associatedcompanyemail" separator="|" result="dynamic" fallback-ref="associatedcompanyemail"/>-->
@@ -698,7 +698,7 @@
         <field name="institutiontype" type="string"/>
 
         <!--<field name="institutiontypenav" separator="|"/>-->
-        <field name="institutiontypenav" type="string"/>
+        <!--field name="institutiontypenav" type="string"/-->
 
         <!-- IDT -->
         <!--<field name="institutionnotified" index="no" separator="|"/>-->
@@ -726,7 +726,7 @@
 
         <!-- IDT -->
         <!--<field name="institutionpscnav" separator="|"/>-->
-        <field name="institutionpscnav" type="string"/>
+        <!--field name="institutionpscnav" type="string"/-->
 
         <!-- IDT -->
         <!--<field name="institutionsc" separator="|" result="dynamic" fallback-ref="institutionsc"/>-->
@@ -734,7 +734,7 @@
 
         <!-- IDT -->
         <!--<field name="institutionscnav" separator="|"/>-->
-        <field name="institutionscnav" type="string"/>
+        <!--field name="institutionscnav" type="string"/-->
 
         <!-- IDT -->
         <!--<field name="institutionvc" separator="|" result="dynamic" fallback-ref="institutionvc"/>-->
@@ -742,7 +742,7 @@
 
         <!-- IDT -->
         <!--<field name="institutionvcnav" separator="|"/>-->
-        <field name="institutionvcnav" type="string"/>
+        <!--field name="institutionvcnav" type="string"/-->
 
         <!-- IDT -->
         <!--<field name="idtverifiedcomplaint" separator="|"/>-->
@@ -788,27 +788,27 @@
         <!-- start nested document -->
         <!-- CIS, IDT -->
         <!--<field name="subjectname" separator="|" result="dynamic" fallback-ref="subjectname"/>-->
-        <field name="subjectname" type="string"/>
+        <field name="subjectname" type="string" stored="false" multiValued="true"/>
 
         <!-- CIS, IDT -->
         <!--<field name="subjectcity" separator="|" result="dynamic" fallback-ref="subjectcity"/>-->
-        <field name="subjectcity" type="string"/>
+        <field name="subjectcity" type="string" stored="false" multiValued="true"/>
 
         <!-- CIS, IDT -->
         <!--<field name="subjectstate" separator="|" result="dynamic" fallback-ref="subjectstate"/>-->
-        <field name="subjectstate" type="string"/>
+        <field name="subjectstate" type="string" stored="false" multiValued="true"/>
 
         <!-- CIS, IDT -->
         <!--<field name="subjectcountry" separator="|" result="dynamic" fallback-ref="subjectcountry"/>-->
-        <field name="subjectcountry" type="string"/>
+        <field name="subjectcountry" type="string" stored="false" multiValued="true"/>
 
         <!-- CIS, IDT created by a document processor-->
         <!--<field name="subjectphone" separator="|" result="dynamic" fallback-ref="subjectphone"/>-->
-        <field name="subjectphone" type="string"/>
+        <field name="subjectphone" type="string" stored="false" multiValued="true"/>
 
         <!-- CIS, IDT created by a document processor-->
         <!--<field name="subjectphonenav" separator="|" result="dynamic" fallback-ref="subjectphonenav"/>-->
-        <field name="subjectphonenav" type="string"/>
+        <!--field name="subjectphonenav" type="string"/-->
 
         <!-- CIS, IDT -->
         <!--<field name="subjectemail" separator="|" result="dynamic" fallback-ref="subjectemail"/>-->
@@ -816,15 +816,15 @@
 
         <!-- CIS, IDT -->
         <!--<field name="subjectemaildomain" separator="|" result="dynamic" fallback-ref="subjectemaildomain"/>-->
-        <field name="subjectemaildomain" type="string"/>
+        <!--field name="subjectemaildomain" type="string"/-->
 
         <!-- CIS, IDT -->
         <!--<field name="subjecturl" separator="|" result="dynamic" fallback-ref="subjecturl"/>-->
-        <field name="subjecturl" type="string"/>
+        <field name="subjecturl" type="string" stored="false" multiValued="true"/>
 
         <!-- CIS, IDT -->
         <!--<field name="subjectlocation" separator="|" result="dynamic" fallback-ref="subjectlocation"/>-->
-        <field name="subjectlocation" type="string"/>
+        <!--field name="subjectlocation" type="string"/-->
 
         <!-- CIS, IDT -->
         <!--<field name="subjectaddress" separator="|" result="dynamic" fallback-ref="subjectaddress" wildcard="full"/>-->
@@ -927,7 +927,7 @@
         <!-- Non Moneytory Harm -->
         <!-- IDT Part II-->
         <!--<field name="harmcomments" separator="|" index="no"/>-->
-        <field name="harmcomments" type="string" indexed="false" multiValued="true"/>
+        <field name="harmcomments" type="string" indexed="false"/>
 
 
         <!-- start nested document -->
@@ -994,7 +994,7 @@
 
         <!-- Alerts -->
         <!--<field name="alerttypeofbusines" separator="|" result="dynamic" fallback-ref="alerttypeofbusines"/>-->
-        <field name="alerttypeofbusines" type="string" multiValued="true"/>
+        <field name="alerttypeofbusines" type="string"/>
 
         <!-- Alerts -->
         <!--<field name="alertcreatorid" index="no"/>-->
@@ -1118,84 +1118,84 @@
 
         <!-- Standard fields, generic placeholders. -->
         <!--<field name="generic1" result="dynamic" fallback-ref="generic1"/>-->
-        <field name="generic1" type="string"/>
+        <!--<field name="generic1" type="string"/>-->
 
         <!--<field name="generic2" result="dynamic" fallback-ref="generic2"/>-->
-        <field name="generic2" type="string"/>
+        <!--<field name="generic2" type="string"/>-->
 
         <!--<field name="generic3" result="dynamic" fallback-ref="generic3"/>-->
-        <field name="generic3" type="string"/>
+        <!--<field name="generic3" type="string"/>-->
 
         <!--<field name="generic4" result="no"/>-->
-        <field name="generic4" type="string" indexed="false"/>
+        <!--<field name="generic4" type="string" indexed="false"/>-->
 
         <!--<field name="igeneric1" type="int32" fullsort="yes" result="dynamic" fallback-ref="igeneric1"/>-->
-        <field name="igeneric1" type="int"/>
+        <!--<field name="igeneric1" type="int"/>-->
 
         <!--<field name="igeneric2" type="int32" fullsort="yes" result="dynamic" fallback-ref="igeneric2"/>-->
-        <field name="igeneric2" type="int"/>
+        <!--<field name="igeneric2" type="int"/>-->
 
         <!--<field name="dtgeneric1" type="datetime" fullsort="yes" result="dynamic" fallback-ref="dtgeneric1"/>-->
-        <field name="dtgeneric1" type="date"/>
+        <!--<field name="dtgeneric1" type="date"/>-->
 
         <!--<field name="dtgeneric2" type="datetime" fullsort="yes" result="dynamic" fallback-ref="dtgeneric2"/>-->
-        <field name="dtgeneric2" type="date"/>
+        <!--<field name="dtgeneric2" type="date"/>-->
 
         <!--<field name="phonetic1" result="dynamic" fallback-ref="phonetic1"/>-->
-        <field name="phonetic1" type="string"/>
+        <!--<field name="phonetic1" type="string"/>-->
 
         <!--<field name="phonetic2" result="dynamic" fallback-ref="phonetic2"/>-->
-        <field name="phonetic2" type="string"/>
+        <!--<field name="phonetic2" type="string"/>-->
 
         <!--<field name="phonetic3" result="dynamic" fallback-ref="phonetic3"/>-->
-        <field name="phonetic3" type="string"/>
+        <!--<field name="phonetic3" type="string"/>-->
 
         <!--<field name="phonetic4" result="dynamic" fallback-ref="phonetic4"/>-->
-        <field name="phonetic4" type="string"/>
+        <!--<field name="phonetic4" type="string"/>-->
 
         <!--<field name="phonetic5" result="dynamic" fallback-ref="phonetic5"/>-->
-        <field name="phonetic5" type="string"/>
+        <!--<field name="phonetic5" type="string"/>-->
 
         <!--<field name="phonetic6" result="dynamic" fallback-ref="phonetic6"/>-->
-        <field name="phonetic6" type="string"/>
+        <!--<field name="phonetic6" type="string"/>-->
 
         <!--<field name="phonetic7" result="dynamic" fallback-ref="phonetic7"/>-->
-        <field name="phonetic7" type="string"/>
+        <!--<field name="phonetic7" type="string"/>-->
 
         <!--<field name="phonetic8" result="dynamic" fallback-ref="phonetic8"/>-->
-        <field name="phonetic8" type="string"/>
+        <!--<field name="phonetic8" type="string"/>-->
 
         <!--<field name="phonetic9" result="dynamic" fallback-ref="phonetic9"/>-->
-        <field name="phonetic9" type="string"/>
+        <!--<field name="phonetic9" type="string"/>-->
 
         <!--<field name="phonetic10" result="dynamic" fallback-ref="phonetic10"/>-->
-        <field name="phonetic10" type="string"/>
+        <!--<field name="phonetic10" type="string"/>-->
 
         <!--<field name="phonetic11" result="dynamic" fallback-ref="phonetic11"/>-->
-        <field name="phonetic11" type="string"/>
+        <!--<field name="phonetic11" type="string"/>-->
 
         <!--<field name="phonetic12" result="dynamic" fallback-ref="phonetic12"/>-->
-        <field name="phonetic12" type="string"/>
+        <!--<field name="phonetic12" type="string"/>-->
 
 
         <!-- Entity extraction placeholders. -->
         <!--<field name="companies" separator="|"/>-->
-        <field name="companies" type="string" multiValued="true"/>
+        <field name="companies" type="string"/>
 
         <!--<field name="locations" separator="|"/>-->
-        <field name="locations" type="string" multiValued="true"/>
+        <field name="locations" type="string"/>
 
         <!--<field name="personnames" separator=";"/>-->
-        <field name="personnames" type="string" multiValued="true"/>
+        <field name="personnames" type="string"/>
 
         <!--<field name="concepts" separator="|" element-name="docvector_navigator"/>-->
-        <field name="concepts" type="string" multiValued="true"/>
+        <field name="concepts" type="string"/>
 
         <!--<field name="emails" separator="|"/>-->
-        <field name="emails" type="string" multiValued="true"/>
+        <field name="emails" type="string"/>
 
         <!--<field name="taxonomy" separator="#"/>-->
-        <field name="taxonomy" type="string" multiValued="true"/>
+        <field name="taxonomy" type="string"/>
 
         <!-- To be deleted -->
         <!--<field name="emaildomain" element-name="email.domain"/>-->
@@ -1203,7 +1203,7 @@
 
         <!-- All Collections -->
         <!--<field name="emaildomains" separator=";"/>-->
-        <field name="emaildomains" type="string" multiValued="true"/>
+        <!--field name="emaildomains" type="string"/-->
         <!-- end nested document -->
 
 
@@ -1298,15 +1298,15 @@
         <!-- Military Fields -->
         <!-- CIS, IDT -->
         <!--<field name="militaryinstallationcode" index="no" result="dynamic" fallback-ref="militaryinstallationcode"/>-->
-        <field name="militaryinstallationcode" type="string" indexed="false"/>
+        <!--field name="militaryinstallationcode" type="string" indexed="false"/-->
 
         <!-- CIS, IDT -->
         <!--<field name="militarypaygradecode" index="no" result="dynamic" fallback-ref="militarypaygradecode"/>-->
-        <field name="militarypaygradecode" type="string" indexed="false"/>
+        <!--field name="militarypaygradecode" type="string" indexed="false"/-->
 
         <!-- CIS, IDT -->
         <!--<field name="militarystatuscode" index="no" result="dynamic" fallback-ref="subjectnamevariations"/>-->
-        <field name="militarystatuscode" type="string" indexed="false"/>
+        <!--field name="militarystatuscode" type="string" indexed="false"/-->
 
         <!-- CIS, IDT -->
         <!--<field name="militarybranch" index="yes" result="dynamic" fallback-ref="militarybranch" separator="|"/>-->
@@ -1354,28 +1354,28 @@
 
         <!-- Entity and Phrases extraction -->
         <!--<field name="extractedphrases" index="yes" separator="|"/>-->
-        <field name="extractedphrases" type="string" multiValued="true"/>
+        <field name="extractedphrases" type="string"/>
 
         <!--<field name="extractedentities" index="yes" separator="|"/>-->
-        <field name="extractedentities" type="string" multiValued="true"/>
+        <field name="extractedentities" type="string"/>
 
         <!--<field name="extphraseentity" separator="|" result="dynamic" fallback-ref="extphraseentity"/>-->
-        <field name="extphraseentity" type="string" multiValued="true"/>
+        <field name="extphraseentity" type="string"/>
 
         <!--<field name="extnamedentity" separator="|" result="dynamic" fallback-ref="extnamedentity"/>-->
-        <field name="extnamedentity" type="string" multiValued="true"/>
+        <field name="extnamedentity" type="string"/>
 
         <!--<field name="extcompanies" separator="|" result="dynamic" fallback-ref="extcompanies"/>-->
-        <field name="extcompanies" type="string" multiValued="true"/>
+        <field name="extcompanies" type="string"/>
 
         <!--<field name="extamountpaid" type="float" result="dynamic" fallback-ref="extamountpaid" sort="yes"/>-->
         <field name="extamountpaid" type="float"/>
 
         <!--<field name="extlocations" separator="|" result="dynamic" fallback-ref="extlocations"/>-->
-        <field name="extlocations" type="string" multiValued="true"/>
+        <field name="extlocations" type="string"/>
 
         <!--<field name="exturls" separator="|" result="dynamic" fallback-ref="exturls"/>-->
-        <field name="exturls" type="string" multiValued="true"/>
+        <field name="exturls" type="string"/>
 
         <!--<field name="yearquarter" type="int32" fallback-ref="yearquarter"/>-->
         <field name="yearquarter" type="int"/>
@@ -1384,13 +1384,13 @@
         <field name="createdyear" type="int"/>
 
         <!--<field name="extphrasesmultiword" separator="|" result="dynamic" fallback-ref="extphrasesmultiword"/>-->
-        <field name="extphrasesmultiword" type="string" multiValued="true"/>
+        <field name="extphrasesmultiword" type="string"/>
 
         <!--<field name="amountinvolved" type="float" result="dynamic" fallback-ref="amountinvolved"/>-->
         <field name="amountinvolved" type="float"/>
 
         <!--<field name="extpaymentmethod" separator="|" result="dynamic" fallback-ref="extpaymentmethod"/>-->
-        <field name="extpaymentmethod" type="string" multiValued="true"/>
+        <field name="extpaymentmethod" type="string"/>
 
 
         <!-- todo Geosearch fields. -->
@@ -1416,25 +1416,25 @@
 
         <!--additional generic fields -->
         <!--<field name="genericstr1" result="dynamic" fallback-ref="genericstr1"/>-->
-        <field name="genericstr1" type="string"/>
+        <!--<field name="genericstr1" type="string"/>-->
 
         <!--<field name="genericstr2" result="dynamic" fallback-ref="genericstr2"/>-->
-        <field name="genericstr2" type="string"/>
+        <!--<field name="genericstr2" type="string"/>-->
 
         <!--<field name="genericint1" type="int32" fullsort="yes" result="dynamic" fallback-ref="genericint1"/>-->
-        <field name="genericint1" type="int"/>
+        <!--<field name="genericint1" type="int"/>-->
 
         <!--<field name="genericint2" type="int32" fullsort="yes" result="dynamic" fallback-ref="genericint2"/>-->
-        <field name="genericint2" type="int"/>
+        <!--<field name="genericint2" type="int"/>-->
 
         <!--<field name="genericdt1" type="datetime" fullsort="yes" result="dynamic" fallback-ref="genericdt1"/>-->
-        <field name="genericdt1" type="date"/>
+        <!--<field name="genericdt1" type="date"/>-->
 
         <!--<field name="genericdt2" type="datetime" fullsort="yes" result="dynamic" fallback-ref="genericdt2"/>-->
-        <field name="genericdt2" type="date"/>
+        <!--<field name="genericdt2" type="date"/>-->
 
-        <field name="content" type="text_general"  multiValued="true"/>
-        <field name="contentwithbasename" type="text_general"  multiValued="true"/>
+        <field name="content" type="text_general" stored="false" multiValued="true"/>
+        <field name="contentwithbasename" type="text_general" stored="false" multiValued="true"/>
 
 
         <!-- solr system fields -->
@@ -1449,76 +1449,6 @@
 
     <!--copyField source="concepts" dest="docvector_navigator"/-->
     <!--<copyField source="emaildomain" dest="email.domain"/>-->
-
-    <!--copyField source="primarycompanycity" dest="content"/>
-    <copyField source="primarycompanystate" dest="content"/>
-    <copyField source="associatedcompanycity" dest="content"/>
-    <copyField source="associatedcompanystate" dest="content"/>
-    <copyField source="consumercity" dest="content"/>
-    <copyField source="consumerstate" dest="content"/>
-    <copyField source="consumerzip" dest="content"/>
-    <copyField source="prodservicedesc" dest="content"/>
-    <copyField source="comments" dest="content"/>
-    <copyField source="referencenumber" dest="content"/>
-    <copyField source="organization" dest="content"/>
-    <copyField source="creditbureauname" dest="content"/>
-    <copyField source="complainingcompany" dest="content"/>
-    <copyField source="consumerhomenumber" dest="content"/>
-    <copyField source="consumercellnumber" dest="content"/>
-    <copyField source="primarycompanyemail" dest="content"/>
-    <copyField source="associatedcompanyemail" dest="content"/>
-    <copyField source="primarycompanyphonenumberqs" dest="content"/>
-    <copyField source="primarycompanyname" dest="content"/>
-    <copyField source="associatedcompanyname" dest="content"/>
-    <copyField source="consumerfname" dest="content"/>
-    <copyField source="consumerlname" dest="content"/>
-    <copyField source="suspectfname" dest="content"/>
-    <copyField source="suspectlname" dest="content"/>
-    <copyField source="consumeraddr1" dest="content"/>
-    <copyField source="consumeraddr2" dest="content"/>
-    <copyField source="primarycompanyaddr1" dest="content"/>
-    <copyField source="associatedcompanyaddr1" dest="content"/-->
-    <!--copyField source="primarycompanycity" dest="content"/-->
-    <!--copyField source="militarybranch" dest="content"/>
-    <copyField source="soldierstatus" dest="content"/>
-    <copyField source="soldierstation" dest="content"/-->
-
-
-    <copyField source="primarycompanycity" dest="contentwithbasename"/>
-    <copyField source="primarycompanystate" dest="contentwithbasename"/>
-    <copyField source="associatedcompanycity" dest="contentwithbasename"/>
-    <copyField source="associatedcompanystate" dest="contentwithbasename"/>
-    <copyField source="consumercity" dest="contentwithbasename"/>
-    <copyField source="consumerstate" dest="contentwithbasename"/>
-    <copyField source="consumerzip" dest="contentwithbasename"/>
-    <copyField source="prodservicedesc" dest="contentwithbasename"/>
-    <copyField source="comments" dest="contentwithbasename"/>
-    <copyField source="referencenumber" dest="contentwithbasename"/>
-    <copyField source="organization" dest="contentwithbasename"/>
-    <copyField source="consumercellnumber" dest="contentwithbasename"/>
-    <copyField source="creditbureauname" dest="contentwithbasename"/>
-    <copyField source="complainingcompany" dest="contentwithbasename"/>
-    <copyField source="primarycompanyphonenumberqs" dest="contentwithbasename"/>
-    <copyField source="consumerhomenumber" dest="contentwithbasename"/>
-    <copyField source="primarycompanyemail" dest="contentwithbasename"/>
-    <copyField source="associatedcompanyemail" dest="contentwithbasename"/>
-    <copyField source="subjectname" dest="contentwithbasename"/>
-    <copyField source="primarycompanyname" dest="contentwithbasename"/>
-    <copyField source="associatedcompanyname" dest="contentwithbasename"/>
-    <copyField source="subjectbasename" dest="contentwithbasename"/>
-    <copyField source="consumerfname" dest="contentwithbasename"/>
-    <copyField source="consumerlname" dest="contentwithbasename"/>
-    <copyField source="suspectfname" dest="contentwithbasename"/>
-    <copyField source="suspectlname" dest="contentwithbasename"/>
-    <copyField source="militarybranch" dest="contentwithbasename"/>
-    <copyField source="soldierstatus" dest="contentwithbasename"/>
-    <copyField source="soldierstation" dest="contentwithbasename"/>
-    <copyField source="consumeraddr1" dest="contentwithbasename"/>
-    <copyField source="consumeraddr2" dest="contentwithbasename"/>
-    <copyField source="primarycompanyaddr1" dest="contentwithbasename"/>
-    <copyField source="associatedcompanyaddr1" dest="contentwithbasename"/>
-    <!--copyField source="primarycompanycity" dest="contentwithbasename"/-->
-
 
     <!--copyField source="suspectfname" dest="cfalertsidt"/>
     <copyField source="suspectlname" dest="cfalertsidt"/>
