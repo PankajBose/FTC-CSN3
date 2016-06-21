@@ -1,0 +1,21 @@
+<pcs>
+  <pc>
+    <name></name>
+    <address1></address1>
+    <address1></address1>
+    <city></city>
+    <state></state>
+    <zip></zip>
+    <country></country>
+    <email></email>
+    <url></url>
+    <countrycode></countrycode>
+    <areacode></areacode>
+    <phonenumber></phonenumber>
+    <phoneext></phoneext>
+    <subjectid></subjectid>
+    <subjectidtype></subjectidtype>
+    <subjectidissuerstate></subjectidissuerstate>
+    <subjectidissuercountry></subjectidissuercountry>    
+  </pc>
+</acs>

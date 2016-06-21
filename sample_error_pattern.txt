@@ -1,0 +1,7 @@
+2016-05-27 10:50:44,810 ERROR org.apache.solr.update.PeerSync: PeerSync: core=UCE2Collection_shard1_replica1 url=http://ftcdevspark01.ppl.local:8983/solr ERROR, update log not in ACTIVE or REPLAY state. HDFSUpdateLog{state=BUFFERING, tlog=null}
+2016-05-27 10:50:44,815 ERROR org.apache.solr.update.UpdateLog: Exception reading versions from log
+java.io.IOException: Failed to replace a bad datanode on the existing pipeline due to no more good datanodes being available to try. (Nodes: current=[DatanodeInfoWithStorage[192.168.64.151:1204,DS-237a0efc-908c-4c3a-941e-45b74247496c,DISK], DatanodeInfoWithStorage[192.168.64.152:1204,DS-ece83261-a7d0-449a-a59f-668b5d746b07,DISK]], original=[DatanodeInfoWithStorage[192.168.64.151:1204,DS-237a0efc-908c-4c3a-941e-45b74247496c,DISK], DatanodeInfoWithStorage[192.168.64.152:1204,DS-ece83261-a7d0-449a-a59f-668b5d746b07,DISK]]). The current failed datanode replacement policy is DEFAULT, and a client may configure this via 'dfs.client.block.write.replace-datanode-on-failure.policy' in its configuration.
+        at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.findNewDatanode(DFSOutputStream.java:1162)
+        at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.addDatanode2ExistingPipeline(DFSOutputStream.java:1228)
+        at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.setupPipelineForAppendOrRecovery(DFSOutputStream.java:1375)
+        at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.run(DFSOutputStream.java:674)

@@ -1,0 +1,2410 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<schema name="CSN" version="1.5">
+    <fields>
+        <!-- Fields for CISMain, IDTMain, DNCMain collections -->
+
+        <!-- CIS, IDT, DNC, Alerts -->
+        <!--<field name="documentid" index="no" result="no"/>-->
+        <field name="documentid" type="string" required="true"/>
+
+        <!-- CIS, IDT, DNC, Alerts -->
+        <!--<field name="recordid" type="int32" index="no" result="no"/>-->
+        <field name="recordid" type="int" indexed="false" stored="false"/>
+
+        <!-- CIS, IDT, DNC  -->
+        <!--<field name="referencenumber" result="dynamic" fallback-ref="referencenumber" fullsort="yes"/>-->
+        <field name="referencenumber" type="string"/>
+
+        <!--<field name="intreferencenumber" type="int32" result="dynamic" fallback-ref="intreferencenumber" fullsort="yes"/>-->
+        <field name="intreferencenumber" type="int"/>
+
+        <!-- CIS -->
+        <!--<field name="contacttype" boundary-match="yes" result="dynamic" fallback-ref="contacttype"/>-->
+        <field name="contacttype" type="text_ws"/>
+
+        <!-- CIS, IDT -->
+        <!--<field name="internetrelatedflag" result="dynamic"/>-->
+        <field name="internetrelatedflag" type="boolean"/>
+
+        <!-- CIS, IDT -->
+        <!--<field name="language" boundary-match="yes"/>-->
+        <field name="language" type="text_ws"/>
+
+        <!-- CIS -->
+        <!--<field name="source" result="dynamic" fallback-ref="source" boundary-match="yes"/>-->
+        <field name="source" type="text_ws"/>
+
+        <!-- CIS -->
+        <!--<field name="dncflag" index="no"/>-->
+        <field name="dncflag" type="boolean" indexed="false"/>
+
+        <field name="tsrrelatedflag" type="boolean"/>
+
+        <!-- CIS, IDT, DNC, Alerts -->
+        <!--<field name="comments" result="dynamic" fallback-ref="comments"/>-->
+        <field name="comments" type="string"/>
+
+        <!-- IDT Part II -->
+        <!--<field name="comments2" result="dynamic" fallback-ref="comments2"/>-->
+        <field name="comments2" type="string"/>
+
+        <!-- CIS, IDT, DNC, Alerts -->
+        <!--<field name="commentsteaser" index="no" result="dynamic" fallback-ref="commentsteaser"/>-->
+        <field name="commentsteaser" type="string" indexed="false"/>
+
+        <!-- CIS, IDT, DNC, Alerts -->
+        <!--<field name="redactedcomments" index="no" result="static" fallback-ref="redactedcomments"/>-->
+        <field name="redactedcomments" type="string" indexed="false"/>
+
+        <!-- CIS, IDT, DNC, Alerts -->
+        <!--<field name="redactedcommentsteaser" index="no" result="dynamic" fallback-ref="redactedcommentsteaser"/>-->
+        <field name="redactedcommentsteaser" type="string" indexed="false"/>
+
+        <!-- CIS, IDT, DNC, Alerts -->
+        <!--<field name="createddate" type="datetime" result="dynamic" fallback-ref="createddate" sort="yes"/>-->
+        <field name="createddate" type="date"/>
+
+        <!-- CIS, IDT, DNC -->
+        <!--<field name="externalrefnumber" result="dynamic" fallback-ref="externalrefnumber"/>-->
+        <field name="externalrefnumber" type="string"/>
+
+        <!-- CIS -->
+        <!--<field name="enteredby" index="no"/>-->
+        <field name="enteredby" type="string" indexed="false"/>
+
+        <!-- CIS -->
+        <!--<field name="updatedby" index="no"/>-->
+        <field name="updatedby" type="string" indexed="false"/>
+
+        <!-- CIS, IDT -->
+        <!--<field name="updateddate" type="datetime"/>-->
+        <field name="updateddate" type="date"/>
+
+        <!-- CIS, IDT -->
+        <!--<field name="quicksearchflag" type="string"/>-->
+        <field name="quicksearchflag" type="string"/>
+
+        <!-- IDT -->
+        <!--<field name="occurreddate" index="no" type="datetime"/>-->
+        <field name="occurreddate" type="date" indexed="false"/>
+
+        <!-- IDT -->
+        <!--<field name="noticeddate" index="no" type="datetime"/>-->
+        <field name="noticeddate" type="date" indexed="false"/>
+
+        <!-- IDT Part II-->
+        <!--<field name="numberaccountsaffected" result="dynamic" fallback-ref="numberaccountsaffected" type="float"/>-->
+        <field name="numberaccountsaffected" type="float"/>
+
+        <!-- IDT -->
+        <!--<field name="theftviainternet" index="yes"/>-->
+        <field name="theftviainternet" type="string"/>
+
+        <!-- IDT -->
+        <!--<field name="thefttype" separator="|" result="dynamic" fallback-ref="thefttype"/>-->
+        <field name="thefttype" type="string" multiValued="true"/>
+
+        <!-- IDT Part II-->
+        <!--<field name="thefttypenav" separator="|" result="dynamic" fallback-ref="thefttype"/>-->
+        <field name="thefttypenav" type="string" multiValued="true"/>
+
+        <!-- IDT -->
+        <!--<field name="theftsubtype" separator="|" result="dynamic" fallback-ref="theftsubtype"/>-->
+        <field name="theftsubtype" type="string" multiValued="true"/>
+
+        <!-- IDT -->
+        <!--<field name="harmsuffered" separator="|" result="dynamic" fallback-ref="harmsuffered"/>-->
+        <field name="harmsuffered" type="string" multiValued="true"/>
+
+        <!-- CIS, IDT, DNC  -->
+        <!--<field name="organization" result="dynamic" fallback-ref="organization" boundary-match="yes" fullsort="yes"/>-->
+        <field name="organization" type="text_ws"/>
+
+        <!-- CIS, IDT -->
+        <!--<field name="moneypaid" result="no"/>-->
+        <field name="moneypaid" type="string" stored="false"/>
+
+        <!-- CIS -->
+        <!--<field name="amountrequested" type="float" result="dynamic" fallback-ref="amountrequested"/>-->
+        <field name="amountrequested" type="float"/>
+
+        <!-- CIS -->
+        <!--<field name="amountpaid" type="float" result="dynamic" fallback-ref="amountpaid" sort="yes"/>-->
+        <field name="amountpaid" type="float"/>
+
+        <!-- CIS -->
+        <!--<field name="paymentmethod" boundary-match="yes" result="dynamic" fallback-ref="paymentmethod"/>-->
+        <field name="paymentmethod" type="text_ws"/>
+
+        <!-- CIS -->
+        <!--<field name="agencycontact" result="dynamic" fallback-ref="agencycontact" boundary-match="yes"/>-->
+        <field name="agencycontact" type="text_ws"/>
+
+        <!-- CIS -->
+        <!--<field name="initialcontact" boundary-match="yes" result="dynamic" fallback-ref="initialcontact"/>-->
+        <field name="initialcontact" type="text_ws"/>
+
+        <!-- CIS -->
+        <!--<field name="initialresponse" boundary-match="yes" result="dynamic" fallback-ref="initialresponse"/>-->
+        <field name="initialresponse" type="text_ws"/>
+
+        <!-- CIS, DNC -->
+        <!--<field name="complaintdate" type="datetime" index="no"/>-->
+        <field name="complaintdate" type="date" indexed="false"/>
+
+        <!-- DNC -->
+        <!--<field name="complaintchannel" index="no"/>-->
+        <field name="complaintchannel" type="string" indexed="false"/>
+
+        <!-- DNC -->
+        <!--<field name="dncexistingbusinessrel" result="dynamic" fallback-ref="dncexistingbusinessrel"/>-->
+        <field name="dncexistingbusinessrel" type="string"/>
+
+        <!-- DNC -->
+        <!--<field name="dncprerecmessage" result="dynamic" fallback-ref="dncprerecmessage"/>-->
+        <field name="dncprerecmessage" type="string"/>
+
+        <!-- DNC -->
+        <!--<field name="dncrequeststopcalling" result="dynamic" fallback-ref="dncrequeststopcalling"/>-->
+        <field name="dncrequeststopcalling" type="string"/>
+
+        <!-- CIS, DNC -->
+        <!--<field name="transactiondate" type="datetime" result="dynamic" fallback-ref="transactiondate"/>-->
+        <field name="transactiondate" type="date"/>
+
+        <!-- CIS -->
+        <!--<field name="topic" separator="|" result="dynamic" fallback-ref="topic"/>-->
+        <field name="topic" type="string" multiValued="true"/>
+
+        <!-- CIS -->
+        <!--<field name="topicnav" separator="|"/>-->
+        <field name="topicnav" type="string" multiValued="true"/>
+
+        <!-- CIS, IDT, DNC  -->
+        <!--<field name="prodservicedesc" separator="|" result="dynamic" fallback-ref="prodservicedesc"/>-->
+        <field name="prodservicedesc" type="string" multiValued="true"/>
+
+        <!-- CIS, IDT, DNC -->
+        <!--<field name="prodservicedescnav" separator="|"/>-->
+        <field name="prodservicedescnav" type="string" multiValued="true"/>
+
+        <!-- CIS -->
+        <!--<field name="statute" separator="|" result="dynamic" fallback-ref="statute"/>-->
+        <field name="statute" type="string" multiValued="true"/>
+
+        <!-- CIS -->
+        <!--<field name="statutenav" separator="|"/>-->
+        <field name="statutenav" type="string" multiValued="true"/>
+
+        <!-- CIS -->
+        <!--<field name="violation" separator="|" result="dynamic" fallback-ref="violation"/>-->
+        <field name="violation" type="string" multiValued="true"/>
+
+        <!-- CIS -->
+        <!--<field name="violationnav" separator="|"/>-->
+        <field name="violationnav" type="string" multiValued="true"/>
+
+        <!-- CIS -->
+        <!--<field name="representativefname" index="no" separator="|"/>-->
+        <field name="representativefname" type="string" indexed="false" multiValued="true"/>
+
+        <!-- CIS -->
+        <!--<field name="representativelname" separator="|" result="dynamic" fallback-ref="representativelname"/>-->
+        <field name="representativelname" type="string" multiValued="true"/>
+
+        <field name="repid" type="string"/>
+
+        <!-- CIS -->
+        <!--<field name="representativetitle" index="no" separator="|"/>-->
+        <field name="representativetitle" type="string" indexed="false" multiValued="true"/>
+
+        <!-- CIS -->
+        <!--<field name="complainingcompany" separator="|" result="dynamic" fallback-ref="complainingcompany"/>-->
+        <field name="complainingcompany" type="string" multiValued="true"/>
+
+        <!-- CIS, IDT Part II -->
+        <!--<field name="complaintagainstcreditbureau" result="dynamic" fallback-ref="complaintagainstcreditbureau" separator="|"/>-->
+        <field name="complaintagainstcreditbureau" type="string"/>
+
+        <!-- CIS -->
+        <!--<field name="complaintagainstcreditbureau45days"/>-->
+        <field name="complaintagainstcreditbureau45days" type="string"/>
+
+        <!-- IDT Part II -->
+        <!--<field name="lawviolationcodes" result="dynamic" fallback-ref="lawviolationcodes" separator="|"/>-->
+        <field name="lawviolationcodes" type="string" multiValued="true"/>
+
+
+        <!-- start nested document -->
+        <!-- CIS, IDT, DNC, Alerts -->
+        <!--<field name="consumerlname" separator="|" result="dynamic" fallback-ref="consumerlname"/>-->
+        <field name="consumerlname" type="string"/>
+
+        <!-- CIS, IDT, DNC, Alerts -->
+        <!--<field name="consumerfname" separator="|" result="dynamic" fallback-ref="consumerfname"/>-->
+        <field name="consumerfname" type="string"/>
+
+        <!-- IDT Part II -->
+        <!--<field name="consumermname" separator="|" result="dynamic" fallback-ref="consumermname"/>-->
+        <field name="consumermname" type="string"/>
+
+        <!-- CIS, IDT, DNC, Alerts -->
+        <!--<field name="consumeraddr1" separator="|" result="dynamic" fallback-ref="consumeraddr1"/>-->
+        <field name="consumeraddr1" type="string"/>
+
+        <!-- IDT Part II -->
+        <!--<field name="consumeraddr2" separator="|" result="dynamic" fallback-ref="consumeraddr2"/>-->
+        <field name="consumeraddr2" type="string"/>
+
+        <!-- CIS, IDT, DNC, Alerts -->
+        <!--<field name="consumercity" separator="|" result="dynamic" fallback-ref="consumercity"/>-->
+        <field name="consumercity" type="string"/>
+
+        <!-- IDT Part II -->
+        <!--<field name="consumercitynav" separator="|"/>-->
+        <field name="consumercitynav" type="string"/>
+
+        <!-- IDT Part II -->
+        <!--<field name="consumerstate" separator="|" result="dynamic" fallback-ref="consumerstate"/>-->
+        <field name="consumerstate" type="string"/>
+
+        <!-- IDT Part II -->
+        <!--<field name="consumerstatenav" separator="|"/>-->
+        <field name="consumerstatenav" type="string"/>
+
+        <!--<field name="consumerzip" separator="|" result="dynamic" fallback-ref="consumerzip"/>-->
+        <field name="consumerzip" type="string"/>
+
+        <!-- CIS, IDT, DNC, Alerts -->
+        <!--<field name="consumerzipnav" separator="|"/>-->
+        <field name="consumerzipnav" type="string"/>
+
+        <!-- CIS, IDT, Alerts -->
+        <!--<field name="consumercountry" separator="|" result="dynamic" fallback-ref="consumercountry"/>-->
+        <field name="consumercountry" type="string"/>
+
+        <!-- IDT Part II -->
+        <!--<field name="consumerlivedheresince" index="no" separator="|"/>-->
+        <field name="consumerlivedheresince" type="string" indexed="false"/>
+
+        <!-- CIS, IDT, Alerts -->
+        <!--<field name="consumerworkphone" separator="|" result="dynamic" fallback-ref="consumerworkphone"/>-->
+        <field name="consumerworkphone" type="string"/>
+
+        <!-- CIS, IDT, Alerts -->
+        <!--<field name="consumerworkphoneext" separator="|" result="dynamic" fallback-ref="consumerworkphoneext"/>-->
+        <field name="consumerworkphoneext" type="string"/>
+
+        <!-- CIS, DNC -->
+        <!--<field name="consumerfaxnumber" separator="|" index="no"/>-->
+        <field name="consumerfaxnumber" type="string"/>
+
+        <!-- IDT -->
+        <!--<field name="consumerhomenumber" separator="|" result="dynamic" fallback-ref="consumerhomenumber"/>-->
+        <field name="consumerhomenumber" type="string"/>
+
+        <!-- IDT -->
+        <!--<field name="consumercellnumber" separator="|" result="dynamic" fallback-ref="consumercellnumber"/>-->
+        <field name="consumercellnumber" type="string"/>
+
+        <!-- CIS, IDT, Alerts -->
+        <!--<field name="consumeremail" separator="|" result="dynamic" fallback-ref="consumeremail"/>-->
+        <field name="consumeremail" type="string"/>
+
+        <field name="consumertype" type="string"/>
+
+        <!-- CIS -->
+        <!--<field name="consumeragerange" separator="|"/>-->
+        <field name="consumeragerange" type="string"/>
+
+        <field name="homeareacode" type="string"/>
+        <field name="cellphonenumber" type="string"/>
+        <field name="cellareacode" type="string"/>
+        <field name="homephonenumber" type="string"/>
+        <field name="faxphonenumber" type="string"/>
+        <field name="faxareacode" type="string"/>
+
+
+        <!-- CIS -->
+        <!--<field name="consumeragerangenav" separator="|"/>-->
+        <field name="consumeragerangenav" type="string"/>
+
+        <!-- CIS, Alerts -->
+        <!--<field name="consumercountrycode" separator="|" result="no"/>-->
+        <field name="consumercountrycode" type="string" stored="false"/>
+
+        <!-- CIS, DNC, Alerts -->
+        <!--<field name="consumerareacode" separator="|"/>-->
+        <field name="consumerareacode" type="string"/>
+
+        <!-- IDT, Alerts -->
+        <!--<field name="consumerssn" separator="|" result="no"/>-->
+        <field name="consumerssn" type="string" stored="false"/>
+
+        <!-- IDT Part II -->
+        <!--<field name="consumeridnumber" separator="|" result="no"/>-->
+        <field name="consumeridnumber" type="string"/>
+
+        <!-- IDT Part II -->
+        <!--<field name="consumeridissuedstate" separator="|" result="dynamic" fallback-ref="consumeridissuedstate"/>-->
+        <field name="consumeridissuedstate" type="string"/>
+
+        <!-- IDT Part II -->
+        <!--<field name="soldierstatus" separator="|" result="dynamic" fallback-ref="soldierstatus"/>-->
+        <field name="soldierstatus" type="string"/>
+
+        <!-- IDT Part II -->
+        <!--<field name="soldierstation" separator="|" result="dynamic" fallback-ref="soldierstation"/>-->
+        <field name="soldierstation" type="string"/>
+
+        <!-- IDT Part II -->
+        <!--<field name="soldierpaygrade" separator="|" result="dynamic" fallback-ref="soldierpaygrade"/>-->
+        <field name="soldierpaygrade" type="string"/>
+
+        <!-- IDT -->
+        <!--<field name="consumerdateofbirth" separator="|" result="dynamic" fallback-ref="consumerdateofbirth"/>-->
+        <field name="consumerdateofbirth" type="string"/>
+
+        <!-- DNC -->
+        <!--<field name="isphoneinregistry" separator="|" result="dynamic" fallback-ref="isphoneinregistry"/>-->
+        <field name="isphoneinregistry" type="string"/>
+        <!-- end nested document -->
+
+
+        <!-- IDT Part II -->
+        <!--<field name="showcatffields" index="no"/>-->
+        <field name="showcatffields" type="string" indexed="false"/>
+
+        <!-- IDT Part II -->
+        <!--<field name="catffname" index="no"/>-->
+        <field name="catffname" type="string" indexed="false"/>
+
+        <!-- IDT Part II -->
+        <!--<field name="catfmname" index="no"/>-->
+        <field name="catfmname" type="string" indexed="false"/>
+
+        <!-- IDT Part II -->
+        <!--<field name="catflname" index="no"/>-->
+        <field name="catflname" type="string" indexed="false"/>
+
+        <!-- IDT Part II -->
+        <!--<field name="catfaddress1" index="no"/>-->
+        <field name="catfaddress1" type="string" indexed="false"/>
+
+        <!-- IDT Part II -->
+        <!--<field name="catfaddress2" index="no"/>-->
+        <field name="catfaddress2" type="string" indexed="false"/>
+
+        <!-- IDT Part II -->
+        <!--<field name="catfcity" index="no"/>-->
+        <field name="catfcity" type="string" indexed="false"/>
+
+        <!-- IDT Part II -->
+        <!--<field name="catfcountry" index="no"/>-->
+        <field name="catfcountry" type="string" indexed="false"/>
+
+        <!-- IDT Part II -->
+        <!--<field name="catfstate" index="no"/>-->
+        <field name="catfstate" type="string" indexed="false"/>
+
+        <!-- IDT Part II -->
+        <!--<field name="catfzip" index="no"/>-->
+        <field name="catfzip" type="string" indexed="false"/>
+
+        <!-- IDT Part II -->
+        <!--<field name="catflivedherefrom" index="no"/>-->
+        <field name="catflivedherefrom" type="string" indexed="false"/>
+
+        <!-- IDT Part II -->
+        <!--<field name="catflivedhereto" index="no"/>-->
+        <field name="catflivedhereto" type="string" indexed="false"/>
+
+        <!-- IDT Part II -->
+        <!--<field name="catfphone" index="no"/>-->
+        <field name="catfphone" type="string" indexed="false"/>
+
+        <!-- IDT Part II -->
+        <!--<field name="showreportedbyfields" index="no"/>-->
+        <field name="showreportedbyfields" type="string" indexed="false"/>
+
+        <!-- IDT Part II -->
+        <!--<field name="reportedbybusinessname" index="no"/>-->
+        <field name="reportedbybusinessname" type="string" indexed="false"/>
+
+        <!-- IDT Part II -->
+        <!--<field name="reportedbymname" index="no"/>-->
+        <field name="reportedbymname" type="string" indexed="false"/>
+
+
+        <!-- start nested document -->
+        <!-- IDT Part II-->
+        <!--<field name="creditbureauname" separator="|" result="dynamic" fallback-ref="creditbureauname"/>-->
+        <field name="creditbureauname" type="string"/>
+
+        <!-- IDT Part II-->
+        <!--<field name="creditbureaunotified" separator="|" result="dynamic" fallback-ref="creditbureaunotified"/>-->
+        <field name="creditbureaunotified" type="string"/>
+
+        <!-- IDT -->
+        <!--<field name="associatedcompanycontactname" separator="|" index="no"/>-->
+        <field name="associatedcompanycontactname" type="string" indexed="false"/>
+        <!-- end nested document -->
+
+        <!-- IDT -->
+        <!--<field name="reportedbylname" index="no"/>-->
+        <field name="reportedbylname" type="string" indexed="false"/>
+
+        <!-- IDT -->
+        <!--<field name="reportedbyfname" index="no"/>-->
+        <field name="reportedbyfname" type="string" indexed="false"/>
+
+        <!-- IDT -->
+        <!--<field name="reportedbyaddr1" index="no"/>-->
+        <field name="reportedbyaddr1" type="string" indexed="false"/>
+
+        <!-- IDT -->
+        <!--<field name="reportedbyaddr2" index="no"/>-->
+        <field name="reportedbyaddr2" type="string" indexed="false"/>
+
+        <!-- IDT -->
+        <!--<field name="reportedbycity" index="no"/>-->
+        <field name="reportedbycity" type="string" indexed="false"/>
+
+        <!-- IDT -->
+        <!--<field name="reportedbystate" index="no"/>-->
+        <field name="reportedbystate" type="string" indexed="false"/>
+
+        <!-- IDT -->
+        <!--<field name="reportedbyzip" index="no"/>-->
+        <field name="reportedbyzip" type="string" indexed="false"/>
+
+        <!-- IDT -->
+        <!--<field name="reportedbycountry" index="no"/>-->
+        <field name="reportedbycountry" type="string" indexed="false"/>
+
+        <!-- IDT -->
+        <!--<field name="reportedbyworkphone" index="no"/>-->
+        <field name="reportedbyworkphone" type="string" indexed="false"/>
+
+        <!-- IDT -->
+        <!--<field name="reportedbyworkphoneext" index="no"/>-->
+        <field name="reportedbyworkphoneext" type="string" indexed="false"/>
+
+        <!-- IDT -->
+        <!--<field name="reportedbyhomenumber" index="no"/>-->
+        <field name="reportedbyhomenumber" type="string" indexed="false"/>
+
+        <!-- IDT -->
+        <!--<field name="reportedbyemail" index="no"/>-->
+        <field name="reportedbyemail" type="string" indexed="false"/>
+
+        <!-- IDT Part II-->
+        <!--<field name="reportedbyfax" index="no"/>-->
+        <field name="reportedbyfax" type="string" indexed="false"/>
+
+        <!-- IDT Part II-->
+        <!--<field name="reportedbycell" index="no"/>-->
+        <field name="reportedbycell" type="string" indexed="false"/>
+
+
+        <!-- start nested document -->
+        <!-- IDT, Alerts -->
+        <!--<field name="suspectfname" separator="|" result="dynamic" fallback-ref="suspectfname"/>-->
+        <field name="suspectfname" type="string"/>
+
+        <!-- IDT, Alerts -->
+        <!--<field name="suspectlname" separator="|" result="dynamic" fallback-ref="suspectlname"/>-->
+        <field name="suspectlname" type="string"/>
+
+        <!-- IDT Part II, Alerts -->
+        <!--<field name="suspectmname" separator="|" result="dynamic" fallback-ref="suspectmname"/>-->
+        <field name="suspectmname" type="string"/>
+
+        <!-- IDT Part II-->
+        <!--<field name="suspectvictimrelationship" result="dynamic" fallback-ref="suspectvictimrelationship" separator="|"/>-->
+        <field name="suspectvictimrelationship" type="string"/>
+
+        <!-- IDT Part II-->
+        <!--<field name="suspectobtainmethod" result="dynamic" fallback-ref="suspectobtainmethod" separator="|"/>-->
+        <field name="suspectobtainmethod" type="string"/>
+
+        <!-- IDT -->
+        <!--<field name="suspectaddnlinfo" index="no" separator="|"/>-->
+        <field name="suspectaddnlinfo" type="string" indexed="false"/>
+        <!-- end nested document -->
+
+
+        <!-- start nested document -->
+        <!-- CIS, IDT (suspectcompanyname), DNC, , Alerts -->
+        <!--<field name="primarycompanyname" separator="|" result="dynamic" fallback-ref="primarycompanyname"/>-->
+        <field name="primarycompanyname" type="string"/>
+
+        <!-- CIS, IDT (suspectcompanyaddr1), Alerts -->
+        <!--<field name="primarycompanyaddr1" separator="|" result="dynamic" fallback-ref="primarycompanyaddr1" wildcard="full"/>-->
+        <field name="primarycompanyaddr1" type="string"/>
+
+        <!-- CIS, IDT (suspectcompanyaddr2),  -->
+        <!--<field name="primarycompanyaddr2" separator="|" result="dynamic" fallback-ref="primarycompanyaddr2"/>-->
+        <field name="primarycompanyaddr2" type="string"/>
+
+        <!-- CIS, IDT (suspectcompanycity), Alerts-->
+        <!--<field name="primarycompanycity" separator="|" result="dynamic" fallback-ref="primarycompanycity"/>-->
+        <field name="primarycompanycity" type="string"/>
+
+        <!-- CIS, IDT (suspectcompanystate), DNC, , Alerts -->
+        <!--<field name="primarycompanystate" separator="|" result="dynamic" fallback-ref="primarycompanystate"/>-->
+        <field name="primarycompanystate" type="string"/>
+
+        <!-- CIS, IDT (suspectcompanyzip), Alerts -->
+        <!--<field name="primarycompanyzip" separator="|" result="dynamic" fallback-ref="primarycompanyzip"/>-->
+        <field name="primarycompanyzip" type="string"/>
+
+        <!-- IDT Part II -->
+        <!--<field name="primarycompanyzipnav" separator="|"/>-->
+        <field name="primarycompanyzipnav" type="string"/>
+
+        <!-- CIS, IDT (suspectcompanycountry), Alerts -->
+        <!--<field name="primarycompanycountry" separator="|" result="dynamic" fallback-ref="primarycompanycountry"/>-->
+        <field name="primarycompanycountry" type="string"/>
+
+        <!-- CIS, IDT (suspectcompanyemail), Alerts -->
+        <!--<field name="primarycompanyemail" separator="|" result="dynamic" fallback-ref="primarycompanyemail"/>-->
+        <field name="primarycompanyemail" type="string"/>
+
+        <!-- CIS, IDT (suspectcompanyurl), Alerts -->
+        <!--<field name="primarycompanyurl" separator="|" result="dynamic" fallback-ref="primarycompanyurl"/>-->
+        <field name="primarycompanyurl" type="string"/>
+
+        <!-- CIS, IDT, DNC, Alerts -->
+        <!--<field name="primarycompanycountrycode" separator="|" result="dynamic" fallback-ref="primarycompanycountrycode"/>-->
+        <field name="primarycompanycountrycode" type="string"/>
+
+        <!-- CIS, IDT, DNC, Alerts -->
+        <!--<field name="primarycompanyareacode" separator="|" result="dynamic" fallback-ref="primarycompanyareacode"/>-->
+        <field name="primarycompanyareacode" type="string"/>
+
+        <!-- CIS, IDT, DNC, Alerts -->
+        <!--<field name="primarycompanyphonenumber" separator="|" result="dynamic" fallback-ref="primarycompanyphonenumber"/>-->
+        <field name="primarycompanyphonenumber" type="string"/>
+
+        <!-- IDT Part II -->
+        <!--<field name="primarycompanyphonenumberqs" separator="|" result="dynamic" fallback-ref="primarycompanyphonenumberqs"/>-->
+        <field name="primarycompanyphonenumberqs" type="string"/>
+
+        <!-- CIS, IDT, Alerts -->
+        <!--<field name="primarycompanyphoneext" separator="|" index="no"/>-->
+        <field name="primarycompanyphoneext" type="string" indexed="false"/>
+        <!-- end nested document -->
+
+
+        <!-- start nested document -->
+        <!-- CIS, IDT -->
+        <!--<field name="associatedcompanyname" separator="|" result="dynamic" fallback-ref="associatedcompanyname"/>-->
+        <field name="associatedcompanyname" type="string"/>
+
+        <!-- IDT -->
+        <!--<field name="associatedcompanynamenav" separator="|"/>-->
+        <field name="associatedcompanynamenav" type="string"/>
+
+        <!-- IDT -->
+        <!--<field name="associatedcompanybasename" separator="|" result="dynamic" fallback-ref="associatedcompanybasename"/>-->
+        <field name="associatedcompanybasename" type="string"/>
+
+        <!-- IDT -->
+        <!--<field name="associatedcompanybasenamenav" separator="|"/>-->
+        <field name="associatedcompanybasenamenav" type="string"/>
+
+        <!-- CIS, IDT -->
+        <!--<field name="associatedcompanytype" separator="|" result="dynamic" fallback-ref="associatedcompanytype"/>-->
+        <field name="associatedcompanytype" type="string"/>
+
+        <!-- IDT -->
+        <!--<field name="associatedcompanytypenav" separator="|"/>-->
+        <field name="associatedcompanytypenav" type="string"/>
+
+        <!-- CIS, IDT, Alerts -->
+        <!--<field name="associatedcompanyaddr1" separator="|" result="dynamic" fallback-ref="associatedcompanyaddr1"/>-->
+        <field name="associatedcompanyaddr1" type="string"/>
+
+        <!-- CIS, IDT -->
+        <!--<field name="associatedcompanyaddr2" separator="|" result="dynamic" fallback-ref="associatedcompanyaddr2"/>-->
+        <field name="associatedcompanyaddr2" type="string"/>
+
+        <!-- CIS, IDT, Alerts -->
+        <!--<field name="associatedcompanycity" separator="|" result="dynamic" fallback-ref="associatedcompanycity"/>-->
+        <field name="associatedcompanycity" type="string"/>
+
+        <!-- IDT -->
+        <!--<field name="associatedcompanycitynav" separator="|"/>-->
+        <field name="associatedcompanycitynav" type="string"/>
+
+        <!-- CIS, IDT, Alerts -->
+        <!--<field name="associatedcompanystate" separator="|" result="dynamic" fallback-ref="associatedcompanystate"/>-->
+        <field name="associatedcompanystate" type="string"/>
+
+        <!-- IDT -->
+        <!--<field name="associatedcompanystatenav" separator="|"/>-->
+        <field name="associatedcompanystatenav" type="string"/>
+
+        <!-- CIS, IDT, Alerts -->
+        <!--<field name="associatedcompanyzip" separator="|" result="dynamic" fallback-ref="associatedcompanyzip"/>-->
+        <field name="associatedcompanyzip" type="string"/>
+
+        <!-- CIS, IDT, Alerts -->
+        <!--<field name="associatedcompanycountry" separator="|" result="dynamic" fallback-ref="associatedcompanycountry"/>-->
+        <field name="associatedcompanycountry" type="string"/>
+
+        <!-- IDT -->
+        <!--<field name="associatedcompanycountrynav" separator="|"/>-->
+        <field name="associatedcompanycountrynav" type="string"/>
+
+        <!-- CIS, Alerts -->
+        <!--<field name="associatedcompanyemail" separator="|" result="dynamic" fallback-ref="associatedcompanyemail"/>-->
+        <field name="associatedcompanyemail" type="string"/>
+
+        <!-- CIS, Alerts -->
+        <!--<field name="associatedcompanyurl" separator="|" result="dynamic" fallback-ref="associatedcompanyurl"/>-->
+        <field name="associatedcompanyurl" type="string"/>
+
+        <!-- CIS, Alerts -->
+        <!--<field name="associatedcompanycountrycode" separator="|" result="dynamic" fallback-ref="associatedcompanycountrycode"/>-->
+        <field name="associatedcompanycountrycode" type="string"/>
+
+        <!-- CIS, Alerts -->
+        <!--<field name="associatedcompanyareacode" separator="|" result="dynamic" fallback-ref="associatedcompanyareacode"/>-->
+        <field name="associatedcompanyareacode" type="string"/>
+
+        <!-- CIS, Alerts -->
+        <!--<field name="associatedcompanyphonenumber" separator="|" result="dynamic" fallback-ref="associatedcompanyphonenumber"/>-->
+        <field name="associatedcompanyphonenumber" type="string"/>
+
+        <!-- CIS, Alerts -->
+        <!--<field name="associatedcompanyphoneext" separator="|" result="dynamic" fallback-ref="associatedcompanyphoneext"/>-->
+        <field name="associatedcompanyphoneext" type="string"/>
+
+        <!-- IDT Part II -->
+        <!--<field name="associatedemail" separator="|" result="dynamic" fallback-ref="associatedemail"/>-->
+        <field name="associatedemail" type="string"/>
+
+        <!-- IDT Part II -->
+        <!--<field name="associatedurl" separator="|" result="dynamic" fallback-ref="associatedurl"/>-->
+        <field name="associatedurl" type="string"/>
+        <!-- end nested document -->
+
+
+        <!-- start nested document -->
+        <!-- IDT -->
+        <!--<field name="institutiontype" separator="|" result="dynamic" fallback-ref="institutiontype"/>-->
+        <field name="institutiontype" type="string"/>
+
+        <!--<field name="institutiontypenav" separator="|"/>-->
+        <field name="institutiontypenav" type="string"/>
+
+        <!-- IDT -->
+        <!--<field name="institutionnotified" index="no" separator="|"/>-->
+        <field name="institutionnotified" type="string" indexed="false"/>
+
+        <!-- IDT -->
+        <!--<field name="institutionwrittennotification" index="no" separator="|"/>-->
+        <field name="institutionwrittennotification" type="string" indexed="false"/>
+
+        <!-- IDT Part II-->
+        <!--<field name="institutionfraudalertset" result="dynamic" fallback-ref="institutionfraudalertset" separator="|"/>-->
+        <field name="institutionfraudalertset" type="string"/>
+
+        <!-- IDT Part II-->
+        <!--<field name="institutioncreditreportordered" result="dynamic" fallback-ref="institutioncreditreportordered" separator="|"/>-->
+        <field name="institutioncreditreportordered" type="string"/>
+
+        <!-- CIS, IDT -->
+        <!--<field name="problemwithcompany" separator="|"/>-->
+        <field name="problemwithcompany" type="string"/>
+
+        <!-- IDT -->
+        <!--<field name="institutionpsc" separator="|" result="dynamic" fallback-ref="institutionpsc"/>-->
+        <field name="institutionpsc" type="string"/>
+
+        <!-- IDT -->
+        <!--<field name="institutionpscnav" separator="|"/>-->
+        <field name="institutionpscnav" type="string"/>
+
+        <!-- IDT -->
+        <!--<field name="institutionsc" separator="|" result="dynamic" fallback-ref="institutionsc"/>-->
+        <field name="institutionsc" type="string"/>
+
+        <!-- IDT -->
+        <!--<field name="institutionscnav" separator="|"/>-->
+        <field name="institutionscnav" type="string"/>
+
+        <!-- IDT -->
+        <!--<field name="institutionvc" separator="|" result="dynamic" fallback-ref="institutionvc"/>-->
+        <field name="institutionvc" type="string"/>
+
+        <!-- IDT -->
+        <!--<field name="institutionvcnav" separator="|"/>-->
+        <field name="institutionvcnav" type="string"/>
+
+        <!-- IDT -->
+        <!--<field name="idtverifiedcomplaint" separator="|"/>-->
+        <field name="idtverifiedcomplaint" type="string"/>
+        <!-- end nested document -->
+
+
+        <!-- start nested document -->
+        <!-- IDT -->
+        <!--<field name="lawenfdeptname" separator="|" result="dynamic" fallback-ref="lawenfdeptname"/>-->
+        <field name="lawenfdeptname" type="string"/>
+
+        <!-- IDT -->
+        <!--<field name="lawenfcontactperson" index="no" separator="|"/>-->
+        <field name="lawenfcontactperson" type="string" indexed="false"/>
+
+        <!-- IDT -->
+        <!--<field name="lawenfdeptstate" separator="|" result="dynamic" fallback-ref="lawenfdeptstate"/>-->
+        <field name="lawenfdeptstate" type="string"/>
+
+        <!-- IDT Part II-->
+        <!--<field name="lawenforcementphone" result="dynamic" fallback-ref="lawenforcementphone" separator="|"/>-->
+        <field name="lawenforcementphone" type="string"/>
+
+        <!-- IDT Part II-->
+        <!--<field name="notifiedlocallawenforcement" result="dynamic" fallback-ref="notifiedlocallawenforcement" separator="|"/>-->
+        <field name="notifiedlocallawenforcement" type="string"/>
+
+        <!-- IDT Part II -->
+        <!--<field name="lawenfreporttaken" result="dynamic" fallback-ref="lawenfreporttaken" separator="|"/>-->
+        <field name="lawenfreporttaken" type="string"/>
+
+        <!-- IDT -->
+        <!--<field name="lawenfreportnumber" separator="|" result="dynamic" fallback-ref="lawenfreportnumber"/>-->
+        <field name="lawenfreportnumber" type="string"/>
+
+        <!-- IDT Part II-->
+        <!--<field name="lawenfreporttakendate" separator="|" index="no"/>-->
+        <field name="lawenfreporttakendate" type="string" indexed="false"/>
+        <!-- end nested document -->
+
+
+        <!-- start nested document -->
+        <!-- CIS, IDT -->
+        <!--<field name="subjectname" separator="|" result="dynamic" fallback-ref="subjectname"/>-->
+        <field name="subjectname" type="string"/>
+
+        <!-- CIS, IDT -->
+        <!--<field name="subjectcity" separator="|" result="dynamic" fallback-ref="subjectcity"/>-->
+        <field name="subjectcity" type="string"/>
+
+        <!-- CIS, IDT -->
+        <!--<field name="subjectstate" separator="|" result="dynamic" fallback-ref="subjectstate"/>-->
+        <field name="subjectstate" type="string"/>
+
+        <!-- CIS, IDT -->
+        <!--<field name="subjectcountry" separator="|" result="dynamic" fallback-ref="subjectcountry"/>-->
+        <field name="subjectcountry" type="string"/>
+
+        <!-- CIS, IDT created by a document processor-->
+        <!--<field name="subjectphone" separator="|" result="dynamic" fallback-ref="subjectphone"/>-->
+        <field name="subjectphone" type="string"/>
+
+        <!-- CIS, IDT created by a document processor-->
+        <!--<field name="subjectphonenav" separator="|" result="dynamic" fallback-ref="subjectphonenav"/>-->
+        <field name="subjectphonenav" type="string"/>
+
+        <!-- CIS, IDT -->
+        <!--<field name="subjectemail" separator="|" result="dynamic" fallback-ref="subjectemail"/>-->
+        <field name="subjectemail" type="string"/>
+
+        <!-- CIS, IDT -->
+        <!--<field name="subjectemaildomain" separator="|" result="dynamic" fallback-ref="subjectemaildomain"/>-->
+        <field name="subjectemaildomain" type="string"/>
+
+        <!-- CIS, IDT -->
+        <!--<field name="subjecturl" separator="|" result="dynamic" fallback-ref="subjecturl"/>-->
+        <field name="subjecturl" type="string"/>
+
+        <!-- CIS, IDT -->
+        <!--<field name="subjectlocation" separator="|" result="dynamic" fallback-ref="subjectlocation"/>-->
+        <field name="subjectlocation" type="string"/>
+
+        <!-- CIS, IDT -->
+        <!--<field name="subjectaddress" separator="|" result="dynamic" fallback-ref="subjectaddress" wildcard="full"/>-->
+        <field name="subjectaddress" type="string"/>
+
+        <!-- CIS, IDT -->
+        <!--<field name="subjectaddressoriginal" separator="|" result="dynamic" fallback-ref="subjectaddressoriginal" wildcard="full"/>-->
+        <field name="subjectaddressoriginal" type="string"/>
+
+        <!-- CIS-->
+        <!--<field name="subjectid" separator="|" result="no"/>-->
+        <field name="subjectid" type="string"/>
+
+        <!-- CIS-->
+        <!--<field name="subjectidtype" separator="|" result="dynamic" fallback-ref="subjectidtype"/>-->
+        <field name="subjectidtype" type="string"/>
+
+        <!-- CIS-->
+        <!--<field name="subjectidissuerstate" separator="|" result="dynamic" fallback-ref="subjectidissuerstate"/>-->
+        <field name="subjectidissuerstate" type="string"/>
+
+        <!-- CIS-->
+        <!--<field name="subjectidissuercountry" separator="|" result="dynamic" fallback-ref="subjectidissuercountry"/>-->
+        <field name="subjectidissuercountry" type="string"/>
+
+        <!-- CIS-->
+        <!--<field name="complaintresolutionflag" separator="|" result="dynamic" fallback-ref="complaintresolutionflag"/>-->
+        <field name="complaintresolutionflag" type="boolean"/>
+
+        <!-- CIS-->
+        <!--<field name="complaintresolutiontext" separator="|" result="dynamic" fallback-ref="complaintresolutiontext"/>-->
+        <field name="complaintresolutiontext" type="string"/>
+
+        <!-- CIS-->
+        <!--<field name="subjectidissuertype" separator="|" result="dynamic" fallback-ref="subjectidissuertype"/>-->
+        <field name="subjectidissuertype" type="string"/>
+        <!-- end nested document -->
+
+
+        <!-- start nested document -->
+        <!-- Fields specific for Incidents search -->
+        <!-- IDT Part II-->
+        <!--<field name="routingnumber" separator="|" result="dynamic" fallback-ref="routingnumber"/>-->
+        <field name="routingnumber" type="string"/>
+
+        <!-- IDT Part II-->
+        <!--<field name="accountnumber" separator="|" result="dynamic" fallback-ref="accountnumber"/>-->
+        <field name="accountnumber" type="string"/>
+
+        <!-- IDT Part II-->
+        <!--<field name="checknumbers" separator="|" result="dynamic" fallback-ref="checknumbers"/>-->
+        <field name="checknumbers" type="string"/>
+
+        <!-- IDT Part II-->
+        <!--<field name="incidentoccurreddate" separator="|" result="dynamic" fallback-ref="incidentoccurreddate" type="datetime"/>-->
+        <field name="incidentoccurreddate" type="date"/>
+        <!-- end nested document -->
+
+
+        <!-- start nested document -->
+        <!-- Fields specific for Theft Details -->
+        <!-- IDT Part II-->
+        <!--<field name="authorizetouseyourid" separator="|" index="no"/>-->
+        <field name="authorizetouseyourid" type="string" indexed="false"/>
+
+        <!-- IDT Part II-->
+        <!--<field name="receiveanybenefits" separator="|" index="no"/>-->
+        <field name="receiveanybenefits" type="string" indexed="false"/>
+
+        <!-- IDT Part II-->
+        <!--<field name="willingtopresscharges" separator="|" index="no"/>-->
+        <field name="willingtopresscharges" type="string" indexed="false"/>
+
+        <!-- IDT Part II-->
+        <!--<field name="inaccuratepersonalinfo1" separator="|" index="no"/>-->
+        <field name="inaccuratepersonalinfo1" type="string" indexed="false"/>
+
+        <!-- IDT Part II-->
+        <!--<field name="inaccuratepersonalinfo2" separator="|" index="no"/>-->
+        <field name="inaccuratepersonalinfo2" type="string" indexed="false"/>
+
+        <!-- IDT Part II-->
+        <!--<field name="inaccuratepersonalinfo3" separator="|" index="no"/>-->
+        <field name="inaccuratepersonalinfo3" type="string" indexed="false"/>
+
+        <!-- IDT Part II-->
+        <!--<field name="creditinquirycompany1" separator="|" index="no"/>-->
+        <field name="creditinquirycompany1" type="string" indexed="false"/>
+
+        <!-- IDT Part II-->
+        <!--<field name="creditinquirycompany2" separator="|" index="no"/>-->
+        <field name="creditinquirycompany2" type="string" indexed="false"/>
+
+        <!-- IDT Part II-->
+        <!--<field name="creditinquirycompany3" separator="|" index="no"/>-->
+        <field name="creditinquirycompany3" type="string" indexed="false"/>
+        <!-- end nested document -->
+
+
+        <!-- Non Moneytory Harm -->
+        <!-- IDT Part II-->
+        <!--<field name="harmcomments" separator="|" index="no"/>-->
+        <field name="harmcomments" type="string" indexed="false" multiValued="true"/>
+
+
+        <!-- start nested document -->
+        <!-- Fields required for Alerts search -->
+        <!-- Alerts -->
+        <!--<field name="alertcreatorfirstname" index="no"/>-->
+        <field name="alertcreatorfirstname" type="string" indexed="false"/>
+
+        <!-- Alerts -->
+        <!--<field name="alertcreatorlastname" index="no"/>-->
+        <field name="alertcreatorlastname" type="string" indexed="false"/>
+
+        <!-- Alerts -->
+        <!--<field name="alertoriginalownerfirstname" result="dynamic" fallback-ref="alertoriginalownerfirstname"/>-->
+        <field name="alertoriginalownerfirstname" type="string"/>
+
+        <!-- Alerts -->
+        <!--<field name="alertoriginalownerlastname" result="dynamic" fallback-ref="alertoriginalownerlastname"/>-->
+        <field name="alertoriginalownerlastname" type="string"/>
+
+        <!-- Alerts -->
+        <!--<field name="alertoriginalowneremail" index="no"/>-->
+        <field name="alertoriginalowneremail" type="string" indexed="false"/>
+
+        <!-- Alerts -->
+        <!--<field name="alertdelegatedownerfirstname" separator="|" result="dynamic" fallback-ref="alertdelegatedownerfirstname"/>-->
+        <field name="alertdelegatedownerfirstname" type="string"/>
+
+        <!-- Alerts -->
+        <!--<field name="alertdelegatedownerlastname" separator="|" result="dynamic" fallback-ref="alertdelegatedownerlastname"/>-->
+        <field name="alertdelegatedownerlastname" type="string"/>
+
+        <!-- Alerts -->
+        <!--<field name="alertdelegatedowneremail" index="no" separator="|"/>-->
+        <field name="alertdelegatedowneremail" type="string" indexed="false"/>
+
+        <!-- Alerts -->
+        <!--<field name="alertpocfirstname" result="dynamic" fallback-ref="alertpocfirstname"/>-->
+        <field name="alertpocfirstname" type="string"/>
+
+        <!-- Alerts -->
+        <!--<field name="alertpoclastname" result="dynamic" fallback-ref="alertpoclastname"/>-->
+        <field name="alertpoclastname" type="string"/>
+
+        <!-- Alerts -->
+        <!--<field name="alertcontactmethod" index="no"/>-->
+        <field name="alertcontactmethod" type="string" indexed="false"/>
+
+        <!-- Alerts -->
+        <!--<field name="alertcontactvalue" index="no"/>-->
+        <field name="alertcontactvalue" type="string" indexed="false"/>
+
+        <!-- Alerts -->
+        <!--<field name="alertname" result="dynamic" fallback-ref="alertname"/>-->
+        <field name="alertname" type="string"/>
+
+        <!-- Alerts -->
+        <!--<field name="alertexpirationdate" type="datetime" index="no"/>-->
+        <field name="alertexpirationdate" type="string" indexed="false"/>
+
+        <!-- Alerts -->
+        <!--<field name="alertmaxduraton" type="datetime" index="no"/>-->
+        <field name="alertmaxduraton" type="string" indexed="false"/>
+
+        <!-- Alerts -->
+        <!--<field name="alerttypeofbusines" separator="|" result="dynamic" fallback-ref="alerttypeofbusines"/>-->
+        <field name="alerttypeofbusines" type="string" multiValued="true"/>
+
+        <!-- Alerts -->
+        <!--<field name="alertcreatorid" index="no"/>-->
+        <field name="alertcreatorid" type="string" indexed="false"/>
+
+        <!-- Alerts -->
+        <!--<field name="alertoriginalownerid" index="no"/>-->
+        <field name="alertoriginalownerid" type="string" indexed="false"/>
+
+        <!-- Alerts -->
+        <!--<field name="alertdelegatedownerid" index="no"/>-->
+        <field name="alertdelegatedownerid" type="string" indexed="false"/>
+
+        <!-- Alerts -->
+        <!--<field name="alertpocid" index="no"/>-->
+        <field name="alertpocid" type="string" indexed="false"/>
+
+        <!-- Alerts -->
+        <!--<field name="recordtype" result="dynamic" fallback-ref="recordtype" fullsort="yes"/>-->
+        <field name="recordtype" type="string"/>
+
+        <!-- Alerts -->
+        <!--<field name="alertid"/>-->
+        <!--field name="creditinquirycompany3" type="string"/-->
+        <!-- end nested document -->
+
+
+        <!-- Fields required for Mail Scanning-->
+        <!--<field name="mailimagefilename" result="dynamic" fallback-ref="mailimagefilename"/>-->
+        <field name="mailimagefilename" type="string"/>
+
+        <!--<field name="hasmailscannedimage" result="dynamic" fallback-ref="hasmailscannedimage"/>-->
+        <field name="hasmailscannedimage" type="string"/>
+
+        <!--<field name="hasaudiofiles" result="dynamic" fallback-ref="hasaudiofiles"/>-->
+        <field name="hasaudiofiles" type="string"/>
+
+
+        <!-- Fields required for FAQ search -->
+        <!-- FAQ -->
+        <!--<field name="faqid"/>-->
+        <field name="faqid" type="string"/>
+
+        <!-- FAQ -->
+        <!--<field name="faqquestion" lemmatize="yes" result="dynamic" fallback-ref="faqquestion"/>-->
+        <field name="faqquestion" type="text_general"/>
+
+        <!-- FAQ -->
+        <!--<field name="faqanswer" lemmatize="yes" result="dynamic" fallback-ref="faqanswer"/>-->
+        <field name="faqanswer" type="text_general"/>
+
+        <!-- FAQ -->
+        <!--<field name="faqtopic" lemmatize="yes" result="dynamic" fallback-ref="faqtopic"/>-->
+        <field name="faqtopic" type="text_general"/>
+
+        <!-- FAQ -->
+        <!--<field name="faqteaser" index="no" result="dynamic" fallback-ref="faqteaser"/>-->
+        <field name="faqteaser" type="string" indexed="false"/>
+
+        <!-- FAQ -->
+        <!--<field name="faqtopiccode"/>-->
+        <field name="faqtopiccode" type="string"/>
+
+
+        <!-- Fields required for Security Access Manager SAM (secure search). -->
+        <!-- All Collections -->
+        <!--<field name="docacl"/>-->
+        <field name="docacl" type="string"/>
+
+        <!-- All Collections -->
+        <!--<field name="docaclsystemid"/>-->
+        <field name="docaclsystemid" type="string"/>
+
+        <!-- All Collections -->
+        <!--<field name="docaclisencoded"/>-->
+        <field name="docaclisencoded" type="string"/>
+
+
+        <!-- start nested document -->
+        <!-- Fields required for accommodating subject name variations -->
+        <!--<field name="subjectnamevariations" separator="|" result="dynamic" fallback-ref="subjectnamevariations"/>-->
+        <field name="subjectnamevariations" type="string"/>
+
+        <!--<field name="subjectbasename" separator="|" result="dynamic" fallback-ref="subjectbasename"/>-->
+        <field name="subjectbasename" type="string"/>
+
+        <!--<field name="subjectnamestripped" separator="|" result="dynamic" fallback-ref="subjectnamestripped"/>-->
+        <field name="subjectnamestripped" type="string"/>
+
+        <!--<field name="subjectbasenamestripped" separator="|" result="dynamic" fallback-ref="subjectbasenamestripped"/>-->
+        <field name="subjectbasenamestripped" type="string"/>
+
+        <!--<field name="subjectbasenamestrippedphonetic" separator="|" result="dynamic" fallback-ref="subjectbasenamestrippedphonetic"/>-->
+        <field name="subjectbasenamestrippedphonetic" type="string"/>
+
+        <!-- Field to indicate FCRA Flag -->
+        <!--<field name="cradisputeresponded" index="no" separator="|"/>-->
+        <field name="cradisputeresponded" type="boolean" indexed="false"/>
+
+        <!-- Field to indicate FCRA Flag -->
+        <!--<field name="cradisputeresolved" index="no" separator="|"/>-->
+        <field name="cradisputeresolved" type="string" indexed="false"/>
+
+        <!--<field name="matchedbasename" separator="|" result="dynamic" fallback-ref="matchedbasename"/>-->
+        <field name="matchedbasename" type="string"/>
+
+        <!--<field name="matchedassociatedbasename" separator="|" result="dynamic" fallback-ref="matchedassociatedbasename"/>-->
+        <field name="matchedassociatedbasename" type="string"/>
+        <!-- end nested document -->
+
+
+        <!-- Standard fields -->
+        <!-- All Collections -->
+        <!--<field name="processingtime" type="datetime" fullsort="yes"/>-->
+        <field name="processingtime" type="date"/>
+
+        <!-- All Collections -->
+        <!--<field name="docvector" index="no"/>-->
+        <field name="docvector" type="string" indexed="false"/>
+
+
+        <!-- Standard fields, generic placeholders. -->
+        <!--<field name="generic1" result="dynamic" fallback-ref="generic1"/>-->
+        <field name="generic1" type="string"/>
+
+        <!--<field name="generic2" result="dynamic" fallback-ref="generic2"/>-->
+        <field name="generic2" type="string"/>
+
+        <!--<field name="generic3" result="dynamic" fallback-ref="generic3"/>-->
+        <field name="generic3" type="string"/>
+
+        <!--<field name="generic4" result="no"/>-->
+        <field name="generic4" type="string" indexed="false"/>
+
+        <!--<field name="igeneric1" type="int32" fullsort="yes" result="dynamic" fallback-ref="igeneric1"/>-->
+        <field name="igeneric1" type="int"/>
+
+        <!--<field name="igeneric2" type="int32" fullsort="yes" result="dynamic" fallback-ref="igeneric2"/>-->
+        <field name="igeneric2" type="int"/>
+
+        <!--<field name="dtgeneric1" type="datetime" fullsort="yes" result="dynamic" fallback-ref="dtgeneric1"/>-->
+        <field name="dtgeneric1" type="date"/>
+
+        <!--<field name="dtgeneric2" type="datetime" fullsort="yes" result="dynamic" fallback-ref="dtgeneric2"/>-->
+        <field name="dtgeneric2" type="date"/>
+
+        <!--<field name="phonetic1" result="dynamic" fallback-ref="phonetic1"/>-->
+        <field name="phonetic1" type="string"/>
+
+        <!--<field name="phonetic2" result="dynamic" fallback-ref="phonetic2"/>-->
+        <field name="phonetic2" type="string"/>
+
+        <!--<field name="phonetic3" result="dynamic" fallback-ref="phonetic3"/>-->
+        <field name="phonetic3" type="string"/>
+
+        <!--<field name="phonetic4" result="dynamic" fallback-ref="phonetic4"/>-->
+        <field name="phonetic4" type="string"/>
+
+        <!--<field name="phonetic5" result="dynamic" fallback-ref="phonetic5"/>-->
+        <field name="phonetic5" type="string"/>
+
+        <!--<field name="phonetic6" result="dynamic" fallback-ref="phonetic6"/>-->
+        <field name="phonetic6" type="string"/>
+
+        <!--<field name="phonetic7" result="dynamic" fallback-ref="phonetic7"/>-->
+        <field name="phonetic7" type="string"/>
+
+        <!--<field name="phonetic8" result="dynamic" fallback-ref="phonetic8"/>-->
+        <field name="phonetic8" type="string"/>
+
+        <!--<field name="phonetic9" result="dynamic" fallback-ref="phonetic9"/>-->
+        <field name="phonetic9" type="string"/>
+
+        <!--<field name="phonetic10" result="dynamic" fallback-ref="phonetic10"/>-->
+        <field name="phonetic10" type="string"/>
+
+        <!--<field name="phonetic11" result="dynamic" fallback-ref="phonetic11"/>-->
+        <field name="phonetic11" type="string"/>
+
+        <!--<field name="phonetic12" result="dynamic" fallback-ref="phonetic12"/>-->
+        <field name="phonetic12" type="string"/>
+
+
+        <!-- Entity extraction placeholders. -->
+        <!--<field name="companies" separator="|"/>-->
+        <field name="companies" type="string" multiValued="true"/>
+
+        <!--<field name="locations" separator="|"/>-->
+        <field name="locations" type="string" multiValued="true"/>
+
+        <!--<field name="personnames" separator=";"/>-->
+        <field name="personnames" type="string" multiValued="true"/>
+
+        <!--<field name="concepts" separator="|" element-name="docvector_navigator"/>-->
+        <field name="concepts" type="string" multiValued="true"/>
+
+        <!--<field name="emails" separator="|"/>-->
+        <field name="emails" type="string" multiValued="true"/>
+
+        <!--<field name="taxonomy" separator="#"/>-->
+        <field name="taxonomy" type="string" multiValued="true"/>
+
+        <!-- To be deleted -->
+        <!--<field name="emaildomain" element-name="email.domain"/>-->
+        <!--<field name="emaildomain" type="string"/>-->
+
+        <!-- All Collections -->
+        <!--<field name="emaildomains" separator=";"/>-->
+        <field name="emaildomains" type="string" multiValued="true"/>
+        <!-- end nested document -->
+
+
+        <!--Fields to store ngrams with different values of n-->
+        <!--<field name="addressngramfield2" index="yes" separator=";"/>-->
+        <field name="addressngram" type="ngram"/>
+
+        <!--<field name="addressngramfield3" index="yes" separator=";"/>-->
+        <!--<field name="addressngramfield3" type="string"/>-->
+
+        <!--<field name="addressngramfield4" index="yes" separator=";"/>-->
+        <!--<field name="addressngramfield4" type="string"/>-->
+
+        <!--<field name="addressngramfield5" index="yes" separator=";"/>-->
+        <!--<field name="addressngramfield5" type="string"/>-->
+
+        <!--<field name="addressngramfield6" index="yes" separator=";"/>-->
+        <!--<field name="addressngramfield6" type="string"/>-->
+
+        <!--<field name="addressngramfield7" index="yes" separator=";"/>-->
+        <!--<field name="addressngramfield7" type="string"/>-->
+
+        <!--<field name="addressngramfield8" index="yes" separator=";"/>-->
+        <!--<field name="addressngramfield8" type="string"/>-->
+
+        <!--<field name="addressngramfield9" index="yes" separator=";"/>-->
+        <!--<field name="addressngramfield9" type="string"/>-->
+
+        <!--<field name="addressngramfield10" index="yes" separator=";"/>-->
+        <!--<field name="addressngramfield10" type="string"/>-->
+
+        <!--<field name="addressngramfield11" index="yes" separator=";"/>-->
+        <!--<field name="addressngramfield11" type="string"/>-->
+
+        <!--<field name="addressngramfield12" index="yes" separator=";"/>-->
+        <!--<field name="addressngramfield12" type="string"/>-->
+
+        <!--<field name="addressngramfield13" index="yes" separator=";"/>-->
+        <!--<field name="addressngramfield13" type="string"/>-->
+
+        <!--<field name="addressngramfield14" index="yes" separator=";"/>-->
+        <!--<field name="addressngramfield14" type="string"/>-->
+        <!-- end nested document -->
+
+
+        <!--Fields to store ngrams for subjectname with different values of n-->
+        <!--<field name="subjectngramfield2" index="yes" separator=";"/>-->
+        <field name="subjectngram" type="ngram"/>
+
+        <!--<field name="subjectngramfield3" index="yes" separator=";"/>-->
+        <!--<field name="subjectngramfield3" type="string"/>-->
+
+        <!--<field name="subjectngramfield4" index="yes" separator=";"/>-->
+        <!--<field name="subjectngramfield4" type="string"/>-->
+
+        <!--<field name="subjectngramfield5" index="yes" separator=";"/>-->
+        <!--<field name="subjectngramfield5" type="string"/>-->
+
+        <!--<field name="subjectngramfield6" index="yes" separator=";"/>-->
+        <!--<field name="subjectngramfield6" type="string"/>-->
+
+        <!--<field name="subjectngramfield7" index="yes" separator=";"/>-->
+        <!--<field name="subjectngramfield7" type="string"/>-->
+
+        <!--<field name="subjectngramfield8" index="yes" separator=";"/>-->
+        <!--<field name="subjectngramfield8" type="string"/>-->
+
+        <!--<field name="subjectngramfield9" index="yes" separator=";"/>-->
+        <!--<field name="subjectngramfield9" type="string"/>-->
+
+        <!--<field name="subjectngramfield10" index="yes" separator=";"/>-->
+        <!--<field name="subjectngramfield10" type="string"/>-->
+
+        <!--<field name="subjectngramfield11" index="yes" separator=";"/>-->
+        <!--<field name="subjectngramfield11" type="string"/>-->
+
+        <!--<field name="subjectngramfield12" index="yes" separator=";"/>-->
+        <!--<field name="subjectngramfield12" type="string"/>-->
+
+        <!--<field name="subjectngramfield13" index="yes" separator=";"/>-->
+        <!--<field name="subjectngramfield13" type="string"/>-->
+
+        <!--<field name="subjectngramfield14" index="yes" separator=";"/>-->
+        <!--<field name="subjectngramfield14" type="string"/>-->
+
+        <!--<field name="subjectngramfield15" index="yes" separator=";"/>-->
+        <!--<field name="subjectngramfield15" type="string"/>-->
+
+        <!--<field name="subjectngramfield16" index="yes" separator=";"/>-->
+        <!--<field name="subjectngramfield16" type="string"/>-->
+
+        <!-- Military Fields -->
+        <!-- CIS, IDT -->
+        <!--<field name="militaryinstallationcode" index="no" result="dynamic" fallback-ref="militaryinstallationcode"/>-->
+        <field name="militaryinstallationcode" type="string" indexed="false"/>
+
+        <!-- CIS, IDT -->
+        <!--<field name="militarypaygradecode" index="no" result="dynamic" fallback-ref="militarypaygradecode"/>-->
+        <field name="militarypaygradecode" type="string" indexed="false"/>
+
+        <!-- CIS, IDT -->
+        <!--<field name="militarystatuscode" index="no" result="dynamic" fallback-ref="subjectnamevariations"/>-->
+        <field name="militarystatuscode" type="string" indexed="false"/>
+
+        <!-- CIS, IDT -->
+        <!--<field name="militarybranch" index="yes" result="dynamic" fallback-ref="militarybranch" separator="|"/>-->
+        <field name="militarybranch" type="string"/>
+
+        <!-- CIS, IDT -->
+        <!--<field name="militarymember" index="yes" result="dynamic" fallback-ref="militarymember"/>-->
+        <field name="militarymember" type="string"/>
+
+
+        <!-- CIS, IDT -->
+        <!--<field name="consumercountyname" index="yes" result="dynamic" fallback-ref="consumercountyname" separator="|"/>-->
+        <field name="consumercountyname" type="string"/>
+
+        <!-- CIS, IDT -->
+        <!--<field name="consumercountystatecode" index="yes" result="dynamic" fallback-ref="consumercountystatecode" separator="|"/>-->
+        <field name="consumercountystatecode" type="string"/>
+
+        <!-- CIS, IDT -->
+        <!--<field name="consumercountynameextended" index="yes" result="dynamic" fallback-ref="consumercountynameextended" separator="|"/>-->
+        <field name="consumercountynameextended" type="string"/>
+
+        <!-- CIS, IDT -->
+        <!--<field name="companycountyname" index="yes" result="dynamic" fallback-ref="companycountyname" separator="|"/>-->
+        <field name="companycountyname" type="string"/>
+
+        <!-- CIS, IDT -->
+        <!--<field name="companycountystatecode" index="yes" result="dynamic" fallback-ref="companycountystatecode" separator="|"/>-->
+        <field name="companycountystatecode" type="string"/>
+
+        <!-- CIS, IDT -->
+        <!--<field name="companycountynameextended" index="yes" result="dynamic" fallback-ref="companycountynameextended" separator="|"/>-->
+        <field name="companycountynameextended" type="string"/>
+
+
+        <!-- Cross Border CI -->
+        <!--<field name="crossborderflag" index="yes"/>-->
+        <field name="crossborderflag" type="string"/>
+
+
+        <!-- DNC -->
+        <!--<field name="subjectmatter" result="dynamic" fallback-ref="subjectmatter"/>-->
+        <field name="subjectmatter" type="string"/>
+
+
+        <!-- Entity and Phrases extraction -->
+        <!--<field name="extractedphrases" index="yes" separator="|"/>-->
+        <field name="extractedphrases" type="string" multiValued="true"/>
+
+        <!--<field name="extractedentities" index="yes" separator="|"/>-->
+        <field name="extractedentities" type="string" multiValued="true"/>
+
+        <!--<field name="extphraseentity" separator="|" result="dynamic" fallback-ref="extphraseentity"/>-->
+        <field name="extphraseentity" type="string" multiValued="true"/>
+
+        <!--<field name="extnamedentity" separator="|" result="dynamic" fallback-ref="extnamedentity"/>-->
+        <field name="extnamedentity" type="string" multiValued="true"/>
+
+        <!--<field name="extcompanies" separator="|" result="dynamic" fallback-ref="extcompanies"/>-->
+        <field name="extcompanies" type="string" multiValued="true"/>
+
+        <!--<field name="extamountpaid" type="float" result="dynamic" fallback-ref="extamountpaid" sort="yes"/>-->
+        <field name="extamountpaid" type="float"/>
+
+        <!--<field name="extlocations" separator="|" result="dynamic" fallback-ref="extlocations"/>-->
+        <field name="extlocations" type="string" multiValued="true"/>
+
+        <!--<field name="exturls" separator="|" result="dynamic" fallback-ref="exturls"/>-->
+        <field name="exturls" type="string" multiValued="true"/>
+
+        <!--<field name="yearquarter" type="int32" fallback-ref="yearquarter"/>-->
+        <field name="yearquarter" type="int"/>
+
+        <!--<field name="createdyear" type="int32" fallback-ref="createdyear"/>-->
+        <field name="createdyear" type="int"/>
+
+        <!--<field name="extphrasesmultiword" separator="|" result="dynamic" fallback-ref="extphrasesmultiword"/>-->
+        <field name="extphrasesmultiword" type="string" multiValued="true"/>
+
+        <!--<field name="amountinvolved" type="float" result="dynamic" fallback-ref="amountinvolved"/>-->
+        <field name="amountinvolved" type="float"/>
+
+        <!--<field name="extpaymentmethod" separator="|" result="dynamic" fallback-ref="extpaymentmethod"/>-->
+        <field name="extpaymentmethod" type="string" multiValued="true"/>
+
+
+        <!-- todo Geosearch fields. -->
+        <!--<field name="consumerlatitude" type="geo"/>
+        <field name="consumerlongitude" type="geo"/>
+        <field name="companylatitude" type="geo"/>
+        <field name="companylongitude" type="geo"/>-->
+
+
+        <!-- CIS -->
+        <!--<field name="consumerlatitudefloat" type="float" result="dynamic" fallback-ref="consumerlatitudefloat"/>-->
+        <field name="consumerlatitudefloat" type="float"/>
+
+        <!--<field name="consumerlongitudefloat" type="float" result="dynamic" fallback-ref="consumerlongitudefloat"/>-->
+        <field name="consumerlongitudefloat" type="float"/>
+
+        <!--<field name="companylatitudefloat" type="float" result="dynamic" fallback-ref="companylatitudefloat"/>-->
+        <field name="companylatitudefloat" type="float"/>
+
+        <!--<field name="companylongitudefloat" type="float" result="dynamic" fallback-ref="companylongitudefloat"/>-->
+        <field name="companylongitudefloat" type="float"/>
+
+
+        <!--additional generic fields -->
+        <!--<field name="genericstr1" result="dynamic" fallback-ref="genericstr1"/>-->
+        <field name="genericstr1" type="string"/>
+
+        <!--<field name="genericstr2" result="dynamic" fallback-ref="genericstr2"/>-->
+        <field name="genericstr2" type="string"/>
+
+        <!--<field name="genericint1" type="int32" fullsort="yes" result="dynamic" fallback-ref="genericint1"/>-->
+        <field name="genericint1" type="int"/>
+
+        <!--<field name="genericint2" type="int32" fullsort="yes" result="dynamic" fallback-ref="genericint2"/>-->
+        <field name="genericint2" type="int"/>
+
+        <!--<field name="genericdt1" type="datetime" fullsort="yes" result="dynamic" fallback-ref="genericdt1"/>-->
+        <field name="genericdt1" type="date"/>
+
+        <!--<field name="genericdt2" type="datetime" fullsort="yes" result="dynamic" fallback-ref="genericdt2"/>-->
+        <field name="genericdt2" type="date"/>
+
+        <field name="content" type="text_general"  multiValued="true"/>
+        <field name="contentwithbasename" type="text_general"  multiValued="true"/>
+
+
+        <!-- solr system fields -->
+        <field name="_root_" type="string" stored="false"/>
+        <field name="_version_" type="long"/>
+        <field name="type_s" type="string"/>
+    </fields>
+
+    <uniqueKey>documentid</uniqueKey>
+    <!--<defaultSearchField>Body</defaultSearchField>-->
+    <!--solrQueryParser defaultOperator="OR"/-->
+
+    <!--copyField source="concepts" dest="docvector_navigator"/-->
+    <!--<copyField source="emaildomain" dest="email.domain"/>-->
+
+    <!--copyField source="primarycompanycity" dest="content"/>
+    <copyField source="primarycompanystate" dest="content"/>
+    <copyField source="associatedcompanycity" dest="content"/>
+    <copyField source="associatedcompanystate" dest="content"/>
+    <copyField source="consumercity" dest="content"/>
+    <copyField source="consumerstate" dest="content"/>
+    <copyField source="consumerzip" dest="content"/>
+    <copyField source="prodservicedesc" dest="content"/>
+    <copyField source="comments" dest="content"/>
+    <copyField source="referencenumber" dest="content"/>
+    <copyField source="organization" dest="content"/>
+    <copyField source="creditbureauname" dest="content"/>
+    <copyField source="complainingcompany" dest="content"/>
+    <copyField source="consumerhomenumber" dest="content"/>
+    <copyField source="consumercellnumber" dest="content"/>
+    <copyField source="primarycompanyemail" dest="content"/>
+    <copyField source="associatedcompanyemail" dest="content"/>
+    <copyField source="primarycompanyphonenumberqs" dest="content"/>
+    <copyField source="primarycompanyname" dest="content"/>
+    <copyField source="associatedcompanyname" dest="content"/>
+    <copyField source="consumerfname" dest="content"/>
+    <copyField source="consumerlname" dest="content"/>
+    <copyField source="suspectfname" dest="content"/>
+    <copyField source="suspectlname" dest="content"/>
+    <copyField source="consumeraddr1" dest="content"/>
+    <copyField source="consumeraddr2" dest="content"/>
+    <copyField source="primarycompanyaddr1" dest="content"/>
+    <copyField source="associatedcompanyaddr1" dest="content"/-->
+    <!--copyField source="primarycompanycity" dest="content"/-->
+    <!--copyField source="militarybranch" dest="content"/>
+    <copyField source="soldierstatus" dest="content"/>
+    <copyField source="soldierstation" dest="content"/-->
+
+
+    <copyField source="primarycompanycity" dest="contentwithbasename"/>
+    <copyField source="primarycompanystate" dest="contentwithbasename"/>
+    <copyField source="associatedcompanycity" dest="contentwithbasename"/>
+    <copyField source="associatedcompanystate" dest="contentwithbasename"/>
+    <copyField source="consumercity" dest="contentwithbasename"/>
+    <copyField source="consumerstate" dest="contentwithbasename"/>
+    <copyField source="consumerzip" dest="contentwithbasename"/>
+    <copyField source="prodservicedesc" dest="contentwithbasename"/>
+    <copyField source="comments" dest="contentwithbasename"/>
+    <copyField source="referencenumber" dest="contentwithbasename"/>
+    <copyField source="organization" dest="contentwithbasename"/>
+    <copyField source="consumercellnumber" dest="contentwithbasename"/>
+    <copyField source="creditbureauname" dest="contentwithbasename"/>
+    <copyField source="complainingcompany" dest="contentwithbasename"/>
+    <copyField source="primarycompanyphonenumberqs" dest="contentwithbasename"/>
+    <copyField source="consumerhomenumber" dest="contentwithbasename"/>
+    <copyField source="primarycompanyemail" dest="contentwithbasename"/>
+    <copyField source="associatedcompanyemail" dest="contentwithbasename"/>
+    <copyField source="subjectname" dest="contentwithbasename"/>
+    <copyField source="primarycompanyname" dest="contentwithbasename"/>
+    <copyField source="associatedcompanyname" dest="contentwithbasename"/>
+    <copyField source="subjectbasename" dest="contentwithbasename"/>
+    <copyField source="consumerfname" dest="contentwithbasename"/>
+    <copyField source="consumerlname" dest="contentwithbasename"/>
+    <copyField source="suspectfname" dest="contentwithbasename"/>
+    <copyField source="suspectlname" dest="contentwithbasename"/>
+    <copyField source="militarybranch" dest="contentwithbasename"/>
+    <copyField source="soldierstatus" dest="contentwithbasename"/>
+    <copyField source="soldierstation" dest="contentwithbasename"/>
+    <copyField source="consumeraddr1" dest="contentwithbasename"/>
+    <copyField source="consumeraddr2" dest="contentwithbasename"/>
+    <copyField source="primarycompanyaddr1" dest="contentwithbasename"/>
+    <copyField source="associatedcompanyaddr1" dest="contentwithbasename"/>
+    <!--copyField source="primarycompanycity" dest="contentwithbasename"/-->
+
+
+    <!--copyField source="suspectfname" dest="cfalertsidt"/>
+    <copyField source="suspectlname" dest="cfalertsidt"/>
+    <copyField source="consumerfname" dest="cfalertsidt"/>
+    <copyField source="consumerlname" dest="cfalertsidt"/>
+    <copyField source="associatedcompanycity" dest="cfalertsidt"/>
+    <copyField source="associatedcompanystate" dest="cfalertsidt"/>
+    <copyField source="consumercity" dest="cfalertsidt"/>
+    <copyField source="consumerstate" dest="cfalertsidt"/>
+    <copyField source="associatedcompanyaddr1" dest="cfalertsidt"/>
+    <copyField source="consumeraddr1" dest="cfalertsidt"/>
+    <copyField source="soldierstation" dest="cfalertsidt"/>
+    <copyField source="associatedcompanycountry" dest="cfalertsidt"/>
+    <copyField source="consumercountry" dest="cfalertsidt"/>
+    <copyField source="associatedcompanyzip" dest="cfalertsidt"/>
+    <copyField source="consumerzip" dest="cfalertsidt"/>
+    <copyField source="associatedcompanyemail" dest="cfalertsidt"/>
+    <copyField source="associatedcompanyurl" dest="cfalertsidt"/>
+    <copyField source="consumeremail" dest="cfalertsidt"/>
+    <copyField source="associatedcompanycountrycode" dest="cfalertsidt"/>
+    <copyField source="associatedcompanyareacode" dest="cfalertsidt"/>
+    <copyField source="associatedcompanyphonenumber" dest="cfalertsidt"/-->
+
+
+    <!--copyField source="primarycompanycity" dest="cfalertscis"/>
+    <copyField source="primarycompanystate" dest="cfalertscis"/>
+    <copyField source="primarycompanyaddr1" dest="cfalertscis"/>
+    <copyField source="primarycompanycountry" dest="cfalertscis"/>
+    <copyField source="primarycompanyzip" dest="cfalertscis"/>
+    <copyField source="primarycompanyemail" dest="cfalertscis"/>
+    <copyField source="primarycompanyurl" dest="cfalertscis"/>
+    <copyField source="primarycompanyname" dest="cfalertscis"/>
+    <copyField source="alerttypeofbusines" dest="cfalertscis"/>
+    <copyField source="soldierstation" dest="cfalertscis"/>
+    <copyField source="primarycompanycountrycode" dest="cfalertscis"/>
+    <copyField source="primarycompanyareacode" dest="cfalertscis"/>
+    <copyField source="primarycompanyphonenumber" dest="cfalertscis"/-->
+
+
+    <!--copyField source="title" dest="cftutorials"/>
+    <copyField source="body" dest="cftutorials"/>
+    <copyField source="description" dest="cftutorials"/>
+    <copyField source="urlkeywords" dest="cftutorials"/>
+    <copyField source="keywords" dest="cftutorials"/>
+    <copyField source="anchortext" dest="cftutorials"/-->
+
+
+    <!--copyField source="faqquestion" dest="cffaq"/>
+    <copyField source="faqanswer" dest="cffaq"/-->
+
+    <types>
+        <!-- field type definitions. The "name" attribute is
+           just a label to be used by field definitions.  The "class"
+           attribute and any other attributes determine the real
+           behavior of the fieldType.
+             Class names starting with "solr" refer to java classes in a
+           standard package such as org.apache.solr.analysis
+        -->
+        <fieldType name="ngram" class="solr.TextField" sortMissingLast="true">
+            <analyzer>
+                <tokenizer class="solr.NGramTokenizerFactory" minGramSize="6" maxGramSize="14"/>
+            </analyzer>
+        </fieldType>
+
+        <!-- The StrField type is not analyzed, but indexed/stored verbatim.
+           It supports doc values but in that case the field needs to be
+           single-valued and either required or have a default value.
+          -->
+        <fieldType name="string" class="solr.StrField" sortMissingLast="true"/>
+
+        <!-- boolean type: "true" or "false" -->
+        <fieldType name="boolean" class="solr.BoolField" sortMissingLast="true"/>
+
+        <!-- sortMissingLast and sortMissingFirst attributes are optional attributes are
+             currently supported on types that are sorted internally as strings
+             and on numeric types.
+             This includes "string","boolean", and, as of 3.5 (and 4.x),
+             int, float, long, date, double, including the "Trie" variants.
+           - If sortMissingLast="true", then a sort on this field will cause documents
+             without the field to come after documents with the field,
+             regardless of the requested sort order (asc or desc).
+           - If sortMissingFirst="true", then a sort on this field will cause documents
+             without the field to come before documents with the field,
+             regardless of the requested sort order.
+           - If sortMissingLast="false" and sortMissingFirst="false" (the default),
+             then default lucene sorting will be used which places docs without the
+             field first in an ascending sort and last in a descending sort.
+        -->
+
+        <!--
+          Default numeric field types. For faster range queries, consider the tint/tfloat/tlong/tdouble types.
+
+          These fields support doc values, but they require the field to be
+          single-valued and either be required or have a default value.
+        -->
+        <fieldType name="int" class="solr.TrieIntField" precisionStep="0" positionIncrementGap="0"/>
+        <fieldType name="float" class="solr.TrieFloatField" precisionStep="0" positionIncrementGap="0"/>
+        <fieldType name="long" class="solr.TrieLongField" precisionStep="0" positionIncrementGap="0"/>
+        <fieldType name="double" class="solr.TrieDoubleField" precisionStep="0" positionIncrementGap="0"/>
+
+        <!--
+         Numeric field types that index each value at various levels of precision
+         to accelerate range queries when the number of values between the range
+         endpoints is large. See the javadoc for NumericRangeQuery for internal
+         implementation details.
+
+         Smaller precisionStep values (specified in bits) will lead to more tokens
+         indexed per value, slightly larger index size, and faster range queries.
+         A precisionStep of 0 disables indexing at different precision levels.
+        -->
+        <fieldType name="tint" class="solr.TrieIntField" precisionStep="8" positionIncrementGap="0"/>
+        <fieldType name="tfloat" class="solr.TrieFloatField" precisionStep="8" positionIncrementGap="0"/>
+        <fieldType name="tlong" class="solr.TrieLongField" precisionStep="8" positionIncrementGap="0"/>
+        <fieldType name="tdouble" class="solr.TrieDoubleField" precisionStep="8" positionIncrementGap="0"/>
+
+        <!-- The format for this date field is of the form 1995-12-31T23:59:59Z, and
+             is a more restricted form of the canonical representation of dateTime
+             http://www.w3.org/TR/xmlschema-2/#dateTime
+             The trailing "Z" designates UTC time and is mandatory.
+             Optional fractional seconds are allowed: 1995-12-31T23:59:59.999Z
+             All other components are mandatory.
+
+             Expressions can also be used to denote calculations that should be
+             performed relative to "NOW" to determine the value, ie...
+
+                   NOW/HOUR
+                      ... Round to the start of the current hour
+                   NOW-1DAY
+                      ... Exactly 1 day prior to now
+                   NOW/DAY+6MONTHS+3DAYS
+                      ... 6 months and 3 days in the future from the start of
+                          the current day
+
+             Consult the DateField javadocs for more information.
+
+             Note: For faster range queries, consider the tdate type
+          -->
+        <fieldType name="date" class="solr.TrieDateField" precisionStep="0" positionIncrementGap="0"/>
+
+        <!-- A Trie based date field for faster date range queries and date faceting. -->
+        <fieldType name="tdate" class="solr.TrieDateField" precisionStep="6" positionIncrementGap="0"/>
+
+
+        <!--Binary data type. The data should be sent/retrieved in as Base64 encoded Strings -->
+        <fieldtype name="binary" class="solr.BinaryField"/>
+
+        <!--
+          Note:
+          These should only be used for compatibility with existing indexes (created with lucene or older Solr versions).
+          Use Trie based fields instead. As of Solr 3.5 and 4.x, Trie based fields support sortMissingFirst/Last
+
+          Plain numeric field types that store and index the text
+          value verbatim (and hence don't correctly support range queries, since the
+          lexicographic ordering isn't equal to the numeric ordering)
+        -->
+        <fieldType name="pint" class="solr.IntField"/>
+        <fieldType name="plong" class="solr.LongField"/>
+        <fieldType name="pfloat" class="solr.FloatField"/>
+        <fieldType name="pdouble" class="solr.DoubleField"/>
+        <fieldType name="pdate" class="solr.DateField" sortMissingLast="true"/>
+
+        <!-- The "RandomSortField" is not used to store or search any
+             data.  You can declare fields of this type it in your schema
+             to generate pseudo-random orderings of your docs for sorting
+             or function purposes.  The ordering is generated based on the field
+             name and the version of the index. As long as the index version
+             remains unchanged, and the same field name is reused,
+             the ordering of the docs will be consistent.
+             If you want different psuedo-random orderings of documents,
+             for the same version of the index, use a dynamicField and
+             change the field name in the request.
+         -->
+        <fieldType name="random" class="solr.RandomSortField" indexed="true"/>
+
+        <!-- solr.TextField allows the specification of custom text analyzers
+             specified as a tokenizer and a list of token filters. Different
+             analyzers may be specified for indexing and querying.
+
+             The optional positionIncrementGap puts space between multiple fields of
+             this type on the same document, with the purpose of preventing false phrase
+             matching across fields.
+
+             For more info on customizing your analyzer chain, please see
+             http://wiki.apache.org/solr/AnalyzersTokenizersTokenFilters
+         -->
+
+        <!-- One can also specify an existing Analyzer class that has a
+             default constructor via the class attribute on the analyzer element.
+             Example:
+        <fieldType name="text_greek" class="solr.TextField">
+          <analyzer class="org.apache.lucene.analysis.el.GreekAnalyzer"/>
+        </fieldType>
+        -->
+
+        <!-- A text field that only splits on whitespace for exact matching of words -->
+        <fieldType name="text_ws" class="solr.TextField" positionIncrementGap="100">
+            <analyzer>
+                <tokenizer class="solr.WhitespaceTokenizerFactory"/>
+            </analyzer>
+        </fieldType>
+
+        <!-- A general text field that has reasonable, generic
+             cross-language defaults: it tokenizes with StandardTokenizer,
+         removes stop words from case-insensitive "stopwords.txt"
+         (empty by default), and down cases.  At query time only, it
+         also applies synonyms. -->
+        <fieldType name="text_general" class="solr.TextField" positionIncrementGap="100">
+            <analyzer type="index">
+                <tokenizer class="solr.StandardTokenizerFactory"/>
+                <filter class="solr.StopFilterFactory" ignoreCase="true" words="stopwords.txt"/>
+                <!-- in this example, we will only use synonyms at query time
+                <filter class="solr.SynonymFilterFactory" synonyms="index_synonyms.txt" ignoreCase="true" expand="false"/>
+                -->
+                <filter class="solr.LowerCaseFilterFactory"/>
+            </analyzer>
+            <analyzer type="query">
+                <tokenizer class="solr.StandardTokenizerFactory"/>
+                <filter class="solr.StopFilterFactory" ignoreCase="true" words="stopwords.txt"/>
+                <filter class="solr.SynonymFilterFactory" synonyms="synonyms.txt" ignoreCase="true" expand="true"/>
+                <filter class="solr.LowerCaseFilterFactory"/>
+            </analyzer>
+        </fieldType>
+
+        <!-- A text field with defaults appropriate for English: it
+             tokenizes with StandardTokenizer, removes English stop words
+             (lang/stopwords_en.txt), down cases, protects words from protwords.txt, and
+             finally applies Porter's stemming.  The query time analyzer
+             also applies synonyms from synonyms.txt. -->
+        <fieldType name="text_en" class="solr.TextField" positionIncrementGap="100">
+            <analyzer type="index">
+                <tokenizer class="solr.StandardTokenizerFactory"/>
+                <!-- in this example, we will only use synonyms at query time
+                <filter class="solr.SynonymFilterFactory" synonyms="index_synonyms.txt" ignoreCase="true" expand="false"/>
+                -->
+                <!-- Case insensitive stop word removal.
+                -->
+                <filter class="solr.StopFilterFactory"
+                        ignoreCase="true"
+                        words="lang/stopwords_en.txt"
+                />
+                <filter class="solr.LowerCaseFilterFactory"/>
+                <filter class="solr.EnglishPossessiveFilterFactory"/>
+                <filter class="solr.KeywordMarkerFilterFactory" protected="protwords.txt"/>
+                <!-- Optionally you may want to use this less aggressive stemmer instead of PorterStemFilterFactory:
+                    <filter class="solr.EnglishMinimalStemFilterFactory"/>
+                -->
+                <filter class="solr.PorterStemFilterFactory"/>
+            </analyzer>
+            <analyzer type="query">
+                <tokenizer class="solr.StandardTokenizerFactory"/>
+                <filter class="solr.SynonymFilterFactory" synonyms="synonyms.txt" ignoreCase="true" expand="true"/>
+                <filter class="solr.StopFilterFactory"
+                        ignoreCase="true"
+                        words="lang/stopwords_en.txt"
+                />
+                <filter class="solr.LowerCaseFilterFactory"/>
+                <filter class="solr.EnglishPossessiveFilterFactory"/>
+                <filter class="solr.KeywordMarkerFilterFactory" protected="protwords.txt"/>
+                <!-- Optionally you may want to use this less aggressive stemmer instead of PorterStemFilterFactory:
+                    <filter class="solr.EnglishMinimalStemFilterFactory"/>
+                -->
+                <filter class="solr.PorterStemFilterFactory"/>
+            </analyzer>
+        </fieldType>
+
+        <!-- A text field with defaults appropriate for English, plus
+         aggressive word-splitting and autophrase features enabled.
+         This field is just like text_en, except it adds
+         WordDelimiterFilter to enable splitting and matching of
+         words on case-change, alpha numeric boundaries, and
+         non-alphanumeric chars.  This means certain compound word
+         cases will work, for example query "wi fi" will match
+         document "WiFi" or "wi-fi".
+            -->
+        <fieldType name="text_en_splitting" class="solr.TextField" positionIncrementGap="100"
+                   autoGeneratePhraseQueries="true">
+            <analyzer type="index">
+                <tokenizer class="solr.WhitespaceTokenizerFactory"/>
+                <!-- in this example, we will only use synonyms at query time
+                <filter class="solr.SynonymFilterFactory" synonyms="index_synonyms.txt" ignoreCase="true" expand="false"/>
+                -->
+                <!-- Case insensitive stop word removal.
+                -->
+                <filter class="solr.StopFilterFactory"
+                        ignoreCase="true"
+                        words="lang/stopwords_en.txt"
+                />
+                <filter class="solr.WordDelimiterFilterFactory" generateWordParts="1" generateNumberParts="1"
+                        catenateWords="1" catenateNumbers="1" catenateAll="0" splitOnCaseChange="1"/>
+                <filter class="solr.LowerCaseFilterFactory"/>
+                <filter class="solr.KeywordMarkerFilterFactory" protected="protwords.txt"/>
+                <filter class="solr.PorterStemFilterFactory"/>
+            </analyzer>
+            <analyzer type="query">
+                <tokenizer class="solr.WhitespaceTokenizerFactory"/>
+                <filter class="solr.SynonymFilterFactory" synonyms="synonyms.txt" ignoreCase="true" expand="true"/>
+                <filter class="solr.StopFilterFactory"
+                        ignoreCase="true"
+                        words="lang/stopwords_en.txt"
+                />
+                <filter class="solr.WordDelimiterFilterFactory" generateWordParts="1" generateNumberParts="1"
+                        catenateWords="0" catenateNumbers="0" catenateAll="0" splitOnCaseChange="1"/>
+                <filter class="solr.LowerCaseFilterFactory"/>
+                <filter class="solr.KeywordMarkerFilterFactory" protected="protwords.txt"/>
+                <filter class="solr.PorterStemFilterFactory"/>
+            </analyzer>
+        </fieldType>
+
+        <!-- Less flexible matching, but less false matches.  Probably not ideal for product names,
+             but may be good for SKUs.  Can insert dashes in the wrong place and still match. -->
+        <fieldType name="text_en_splitting_tight" class="solr.TextField" positionIncrementGap="100"
+                   autoGeneratePhraseQueries="true">
+            <analyzer>
+                <tokenizer class="solr.WhitespaceTokenizerFactory"/>
+                <filter class="solr.SynonymFilterFactory" synonyms="synonyms.txt" ignoreCase="true" expand="false"/>
+                <filter class="solr.StopFilterFactory" ignoreCase="true" words="lang/stopwords_en.txt"/>
+                <filter class="solr.WordDelimiterFilterFactory" generateWordParts="0" generateNumberParts="0"
+                        catenateWords="1" catenateNumbers="1" catenateAll="0"/>
+                <filter class="solr.LowerCaseFilterFactory"/>
+                <filter class="solr.KeywordMarkerFilterFactory" protected="protwords.txt"/>
+                <filter class="solr.EnglishMinimalStemFilterFactory"/>
+                <!-- this filter can remove any duplicate tokens that appear at the same position - sometimes
+                     possible with WordDelimiterFilter in conjuncton with stemming. -->
+                <filter class="solr.RemoveDuplicatesTokenFilterFactory"/>
+            </analyzer>
+        </fieldType>
+
+        <!-- Just like text_general except it reverses the characters of
+         each token, to enable more efficient leading wildcard queries. -->
+        <fieldType name="text_general_rev" class="solr.TextField" positionIncrementGap="100">
+            <analyzer type="index">
+                <tokenizer class="solr.StandardTokenizerFactory"/>
+                <filter class="solr.StopFilterFactory" ignoreCase="true" words="stopwords.txt"/>
+                <filter class="solr.LowerCaseFilterFactory"/>
+                <filter class="solr.ReversedWildcardFilterFactory" withOriginal="true"
+                        maxPosAsterisk="3" maxPosQuestion="2" maxFractionAsterisk="0.33"/>
+            </analyzer>
+            <analyzer type="query">
+                <tokenizer class="solr.StandardTokenizerFactory"/>
+                <filter class="solr.SynonymFilterFactory" synonyms="synonyms.txt" ignoreCase="true" expand="true"/>
+                <filter class="solr.StopFilterFactory" ignoreCase="true" words="stopwords.txt"/>
+                <filter class="solr.LowerCaseFilterFactory"/>
+            </analyzer>
+        </fieldType>
+
+        <!-- charFilter + WhitespaceTokenizer  -->
+        <!--
+        <fieldType name="text_char_norm" class="solr.TextField" positionIncrementGap="100" >
+          <analyzer>
+            <charFilter class="solr.MappingCharFilterFactory" mapping="mapping-ISOLatin1Accent.txt"/>
+            <tokenizer class="solr.WhitespaceTokenizerFactory"/>
+          </analyzer>
+        </fieldType>
+        -->
+
+        <!-- This is an example of using the KeywordTokenizer along
+             With various TokenFilterFactories to produce a sortable field
+             that does not include some properties of the source text
+          -->
+        <fieldType name="alphaOnlySort" class="solr.TextField" sortMissingLast="true" omitNorms="true">
+            <analyzer>
+                <!-- KeywordTokenizer does no actual tokenizing, so the entire
+                     input string is preserved as a single token
+                  -->
+                <tokenizer class="solr.KeywordTokenizerFactory"/>
+                <!-- The LowerCase TokenFilter does what you expect, which can be
+                     when you want your sorting to be case insensitive
+                  -->
+                <filter class="solr.LowerCaseFilterFactory"/>
+                <!-- The TrimFilter removes any leading or trailing whitespace -->
+                <filter class="solr.TrimFilterFactory"/>
+                <!-- The PatternReplaceFilter gives you the flexibility to use
+                     Java Regular expression to replace any sequence of characters
+                     matching a pattern with an arbitrary replacement string,
+                     which may include back references to portions of the original
+                     string matched by the pattern.
+
+                     See the Java Regular Expression documentation for more
+                     information on pattern and replacement string syntax.
+
+                     http://java.sun.com/j2se/1.6.0/docs/api/java/util/regex/package-summary.html
+                  -->
+                <filter class="solr.PatternReplaceFilterFactory"
+                        pattern="([^a-z])" replacement="" replace="all"
+                />
+            </analyzer>
+        </fieldType>
+
+        <fieldtype name="phonetic" stored="false" indexed="true" class="solr.TextField">
+            <analyzer>
+                <tokenizer class="solr.StandardTokenizerFactory"/>
+                <filter class="solr.DoubleMetaphoneFilterFactory" inject="false"/>
+            </analyzer>
+        </fieldtype>
+
+        <fieldtype name="payloads" stored="false" indexed="true" class="solr.TextField">
+            <analyzer>
+                <tokenizer class="solr.WhitespaceTokenizerFactory"/>
+                <!--
+                The DelimitedPayloadTokenFilter can put payloads on tokens... for example,
+                a token of "foo|1.4"  would be indexed as "foo" with a payload of 1.4f
+                Attributes of the DelimitedPayloadTokenFilterFactory :
+                 "delimiter" - a one character delimiter. Default is | (pipe)
+             "encoder" - how to encode the following value into a playload
+                float -> org.apache.lucene.analysis.payloads.FloatEncoder,
+                integer -> o.a.l.a.p.IntegerEncoder
+                identity -> o.a.l.a.p.IdentityEncoder
+                    Fully Qualified class name implementing PayloadEncoder, Encoder must have a no arg constructor.
+                 -->
+                <filter class="solr.DelimitedPayloadTokenFilterFactory" encoder="float"/>
+            </analyzer>
+        </fieldtype>
+
+        <!-- lowercases the entire field value, keeping it as a single token.  -->
+        <fieldType name="lowercase" class="solr.TextField" positionIncrementGap="100">
+            <analyzer>
+                <tokenizer class="solr.KeywordTokenizerFactory"/>
+                <filter class="solr.LowerCaseFilterFactory"/>
+            </analyzer>
+        </fieldType>
+
+        <!--
+          Example of using PathHierarchyTokenizerFactory at index time, so
+          queries for paths match documents at that path, or in descendent paths
+        -->
+        <fieldType name="descendent_path" class="solr.TextField">
+            <analyzer type="index">
+                <tokenizer class="solr.PathHierarchyTokenizerFactory" delimiter="/"/>
+            </analyzer>
+            <analyzer type="query">
+                <tokenizer class="solr.KeywordTokenizerFactory"/>
+            </analyzer>
+        </fieldType>
+        <!--
+          Example of using PathHierarchyTokenizerFactory at query time, so
+          queries for paths match documents at that path, or in ancestor paths
+        -->
+        <fieldType name="ancestor_path" class="solr.TextField">
+            <analyzer type="index">
+                <tokenizer class="solr.KeywordTokenizerFactory"/>
+            </analyzer>
+            <analyzer type="query">
+                <tokenizer class="solr.PathHierarchyTokenizerFactory" delimiter="/"/>
+            </analyzer>
+        </fieldType>
+
+        <!-- since fields of this type are by default not stored or indexed,
+             any data added to them will be ignored outright.  -->
+        <fieldtype name="ignored" stored="false" indexed="false" multiValued="true" class="solr.StrField"/>
+
+        <!-- This point type indexes the coordinates as separate fields (subFields)
+          If subFieldType is defined, it references a type, and a dynamic field
+          definition is created matching *___<typename>.  Alternately, if
+          subFieldSuffix is defined, that is used to create the subFields.
+          Example: if subFieldType="double", then the coordinates would be
+            indexed in fields myloc_0___double,myloc_1___double.
+          Example: if subFieldSuffix="_d" then the coordinates would be indexed
+            in fields myloc_0_d,myloc_1_d
+          The subFields are an implementation detail of the fieldType, and end
+          users normally should not need to know about them.
+         -->
+        <fieldType name="point" class="solr.PointType" dimension="2" subFieldSuffix="_d"/>
+
+        <!-- A specialized field for geospatial search. If indexed, this fieldType must not be multivalued. -->
+        <fieldType name="location" class="solr.LatLonType" subFieldSuffix="_coordinate"/>
+
+        <!-- An alternative geospatial field type new to Solr 4.  It supports multiValued and polygon shapes.
+          For more information about this and other Spatial fields new to Solr 4, see:
+          http://wiki.apache.org/solr/SolrAdaptersForLuceneSpatial4
+        -->
+        <fieldType name="location_rpt" class="solr.SpatialRecursivePrefixTreeFieldType"
+                   geo="true" distErrPct="0.025" maxDistErr="0.000009" units="degrees"/>
+
+        <!-- Money/currency field type. See http://wiki.apache.org/solr/MoneyFieldType
+             Parameters:
+               defaultCurrency: Specifies the default currency if none specified. Defaults to "USD"
+               precisionStep:   Specifies the precisionStep for the TrieLong field used for the amount
+               providerClass:   Lets you plug in other exchange provider backend:
+                                solr.FileExchangeRateProvider is the default and takes one parameter:
+                                  currencyConfig: name of an xml file holding exchange rates
+                                solr.OpenExchangeRatesOrgProvider uses rates from openexchangerates.org:
+                                  ratesFileLocation: URL or path to rates JSON file (default latest.json on the web)
+                                  refreshInterval: Number of minutes between each rates fetch (default: 1440, min: 60)
+        -->
+        <fieldType name="currency" class="solr.CurrencyField" precisionStep="8" defaultCurrency="USD"
+                   currencyConfig="currency.xml"/>
+
+
+        <!-- some examples for different languages (generally ordered by ISO code) -->
+
+        <!-- Arabic -->
+        <fieldType name="text_ar" class="solr.TextField" positionIncrementGap="100">
+            <analyzer>
+                <tokenizer class="solr.StandardTokenizerFactory"/>
+                <!-- for any non-arabic -->
+                <filter class="solr.LowerCaseFilterFactory"/>
+                <filter class="solr.StopFilterFactory" ignoreCase="true" words="lang/stopwords_ar.txt"/>
+                <!-- normalizes ﻯ to ﻱ, etc -->
+                <filter class="solr.ArabicNormalizationFilterFactory"/>
+                <filter class="solr.ArabicStemFilterFactory"/>
+            </analyzer>
+        </fieldType>
+
+        <!-- Bulgarian -->
+        <fieldType name="text_bg" class="solr.TextField" positionIncrementGap="100">
+            <analyzer>
+                <tokenizer class="solr.StandardTokenizerFactory"/>
+                <filter class="solr.LowerCaseFilterFactory"/>
+                <filter class="solr.StopFilterFactory" ignoreCase="true" words="lang/stopwords_bg.txt"/>
+                <filter class="solr.BulgarianStemFilterFactory"/>
+            </analyzer>
+        </fieldType>
+
+        <!-- Catalan -->
+        <fieldType name="text_ca" class="solr.TextField" positionIncrementGap="100">
+            <analyzer>
+                <tokenizer class="solr.StandardTokenizerFactory"/>
+                <!-- removes l', etc -->
+                <filter class="solr.ElisionFilterFactory" ignoreCase="true" articles="lang/contractions_ca.txt"/>
+                <filter class="solr.LowerCaseFilterFactory"/>
+                <filter class="solr.StopFilterFactory" ignoreCase="true" words="lang/stopwords_ca.txt"/>
+                <filter class="solr.SnowballPorterFilterFactory" language="Catalan"/>
+            </analyzer>
+        </fieldType>
+
+        <!-- CJK bigram (see text_ja for a Japanese configuration using morphological analysis) -->
+        <fieldType name="text_cjk" class="solr.TextField" positionIncrementGap="100">
+            <analyzer>
+                <tokenizer class="solr.StandardTokenizerFactory"/>
+                <!-- normalize width before bigram, as e.g. half-width dakuten combine  -->
+                <filter class="solr.CJKWidthFilterFactory"/>
+                <!-- for any non-CJK -->
+                <filter class="solr.LowerCaseFilterFactory"/>
+                <filter class="solr.CJKBigramFilterFactory"/>
+            </analyzer>
+        </fieldType>
+
+        <!-- Czech -->
+        <fieldType name="text_cz" class="solr.TextField" positionIncrementGap="100">
+            <analyzer>
+                <tokenizer class="solr.StandardTokenizerFactory"/>
+                <filter class="solr.LowerCaseFilterFactory"/>
+                <filter class="solr.StopFilterFactory" ignoreCase="true" words="lang/stopwords_cz.txt"/>
+                <filter class="solr.CzechStemFilterFactory"/>
+            </analyzer>
+        </fieldType>
+
+        <!-- Danish -->
+        <fieldType name="text_da" class="solr.TextField" positionIncrementGap="100">
+            <analyzer>
+                <tokenizer class="solr.StandardTokenizerFactory"/>
+                <filter class="solr.LowerCaseFilterFactory"/>
+                <filter class="solr.StopFilterFactory" ignoreCase="true" words="lang/stopwords_da.txt"
+                        format="snowball"/>
+                <filter class="solr.SnowballPorterFilterFactory" language="Danish"/>
+            </analyzer>
+        </fieldType>
+
+        <!-- German -->
+        <fieldType name="text_de" class="solr.TextField" positionIncrementGap="100">
+            <analyzer>
+                <tokenizer class="solr.StandardTokenizerFactory"/>
+                <filter class="solr.LowerCaseFilterFactory"/>
+                <filter class="solr.StopFilterFactory" ignoreCase="true" words="lang/stopwords_de.txt"
+                        format="snowball"/>
+                <filter class="solr.GermanNormalizationFilterFactory"/>
+                <filter class="solr.GermanLightStemFilterFactory"/>
+                <!-- less aggressive: <filter class="solr.GermanMinimalStemFilterFactory"/> -->
+                <!-- more aggressive: <filter class="solr.SnowballPorterFilterFactory" language="German2"/> -->
+            </analyzer>
+        </fieldType>
+
+        <!-- Greek -->
+        <fieldType name="text_el" class="solr.TextField" positionIncrementGap="100">
+            <analyzer>
+                <tokenizer class="solr.StandardTokenizerFactory"/>
+                <!-- greek specific lowercase for sigma -->
+                <filter class="solr.GreekLowerCaseFilterFactory"/>
+                <filter class="solr.StopFilterFactory" ignoreCase="false" words="lang/stopwords_el.txt"/>
+                <filter class="solr.GreekStemFilterFactory"/>
+            </analyzer>
+        </fieldType>
+
+        <!-- Spanish -->
+        <fieldType name="text_es" class="solr.TextField" positionIncrementGap="100">
+            <analyzer>
+                <tokenizer class="solr.StandardTokenizerFactory"/>
+                <filter class="solr.LowerCaseFilterFactory"/>
+                <filter class="solr.StopFilterFactory" ignoreCase="true" words="lang/stopwords_es.txt"
+                        format="snowball"/>
+                <filter class="solr.SpanishLightStemFilterFactory"/>
+                <!-- more aggressive: <filter class="solr.SnowballPorterFilterFactory" language="Spanish"/> -->
+            </analyzer>
+        </fieldType>
+
+        <!-- Basque -->
+        <fieldType name="text_eu" class="solr.TextField" positionIncrementGap="100">
+            <analyzer>
+                <tokenizer class="solr.StandardTokenizerFactory"/>
+                <filter class="solr.LowerCaseFilterFactory"/>
+                <filter class="solr.StopFilterFactory" ignoreCase="true" words="lang/stopwords_eu.txt"/>
+                <filter class="solr.SnowballPorterFilterFactory" language="Basque"/>
+            </analyzer>
+        </fieldType>
+
+        <!-- Persian -->
+        <fieldType name="text_fa" class="solr.TextField" positionIncrementGap="100">
+            <analyzer>
+                <!-- for ZWNJ -->
+                <charFilter class="solr.PersianCharFilterFactory"/>
+                <tokenizer class="solr.StandardTokenizerFactory"/>
+                <filter class="solr.LowerCaseFilterFactory"/>
+                <filter class="solr.ArabicNormalizationFilterFactory"/>
+                <filter class="solr.PersianNormalizationFilterFactory"/>
+                <filter class="solr.StopFilterFactory" ignoreCase="true" words="lang/stopwords_fa.txt"/>
+            </analyzer>
+        </fieldType>
+
+        <!-- Finnish -->
+        <fieldType name="text_fi" class="solr.TextField" positionIncrementGap="100">
+            <analyzer>
+                <tokenizer class="solr.StandardTokenizerFactory"/>
+                <filter class="solr.LowerCaseFilterFactory"/>
+                <filter class="solr.StopFilterFactory" ignoreCase="true" words="lang/stopwords_fi.txt"
+                        format="snowball"/>
+                <filter class="solr.SnowballPorterFilterFactory" language="Finnish"/>
+                <!-- less aggressive: <filter class="solr.FinnishLightStemFilterFactory"/> -->
+            </analyzer>
+        </fieldType>
+
+        <!-- French -->
+        <fieldType name="text_fr" class="solr.TextField" positionIncrementGap="100">
+            <analyzer>
+                <tokenizer class="solr.StandardTokenizerFactory"/>
+                <!-- removes l', etc -->
+                <filter class="solr.ElisionFilterFactory" ignoreCase="true" articles="lang/contractions_fr.txt"/>
+                <filter class="solr.LowerCaseFilterFactory"/>
+                <filter class="solr.StopFilterFactory" ignoreCase="true" words="lang/stopwords_fr.txt"
+                        format="snowball"/>
+                <filter class="solr.FrenchLightStemFilterFactory"/>
+                <!-- less aggressive: <filter class="solr.FrenchMinimalStemFilterFactory"/> -->
+                <!-- more aggressive: <filter class="solr.SnowballPorterFilterFactory" language="French"/> -->
+            </analyzer>
+        </fieldType>
+
+        <!-- Irish -->
+        <fieldType name="text_ga" class="solr.TextField" positionIncrementGap="100">
+            <analyzer>
+                <tokenizer class="solr.StandardTokenizerFactory"/>
+                <!-- removes d', etc -->
+                <filter class="solr.ElisionFilterFactory" ignoreCase="true" articles="lang/contractions_ga.txt"/>
+                <!-- removes n-, etc. position increments is intentionally false! -->
+                <filter class="solr.StopFilterFactory" ignoreCase="true" words="lang/hyphenations_ga.txt"/>
+                <filter class="solr.IrishLowerCaseFilterFactory"/>
+                <filter class="solr.StopFilterFactory" ignoreCase="true" words="lang/stopwords_ga.txt"/>
+                <filter class="solr.SnowballPorterFilterFactory" language="Irish"/>
+            </analyzer>
+        </fieldType>
+
+        <!-- Galician -->
+        <fieldType name="text_gl" class="solr.TextField" positionIncrementGap="100">
+            <analyzer>
+                <tokenizer class="solr.StandardTokenizerFactory"/>
+                <filter class="solr.LowerCaseFilterFactory"/>
+                <filter class="solr.StopFilterFactory" ignoreCase="true" words="lang/stopwords_gl.txt"/>
+                <filter class="solr.GalicianStemFilterFactory"/>
+                <!-- less aggressive: <filter class="solr.GalicianMinimalStemFilterFactory"/> -->
+            </analyzer>
+        </fieldType>
+
+        <!-- Hindi -->
+        <fieldType name="text_hi" class="solr.TextField" positionIncrementGap="100">
+            <analyzer>
+                <tokenizer class="solr.StandardTokenizerFactory"/>
+                <filter class="solr.LowerCaseFilterFactory"/>
+                <!-- normalizes unicode representation -->
+                <filter class="solr.IndicNormalizationFilterFactory"/>
+                <!-- normalizes variation in spelling -->
+                <filter class="solr.HindiNormalizationFilterFactory"/>
+                <filter class="solr.StopFilterFactory" ignoreCase="true" words="lang/stopwords_hi.txt"/>
+                <filter class="solr.HindiStemFilterFactory"/>
+            </analyzer>
+        </fieldType>
+
+        <!-- Hungarian -->
+        <fieldType name="text_hu" class="solr.TextField" positionIncrementGap="100">
+            <analyzer>
+                <tokenizer class="solr.StandardTokenizerFactory"/>
+                <filter class="solr.LowerCaseFilterFactory"/>
+                <filter class="solr.StopFilterFactory" ignoreCase="true" words="lang/stopwords_hu.txt"
+                        format="snowball"/>
+                <filter class="solr.SnowballPorterFilterFactory" language="Hungarian"/>
+                <!-- less aggressive: <filter class="solr.HungarianLightStemFilterFactory"/> -->
+            </analyzer>
+        </fieldType>
+
+        <!-- Armenian -->
+        <fieldType name="text_hy" class="solr.TextField" positionIncrementGap="100">
+            <analyzer>
+                <tokenizer class="solr.StandardTokenizerFactory"/>
+                <filter class="solr.LowerCaseFilterFactory"/>
+                <filter class="solr.StopFilterFactory" ignoreCase="true" words="lang/stopwords_hy.txt"/>
+                <filter class="solr.SnowballPorterFilterFactory" language="Armenian"/>
+            </analyzer>
+        </fieldType>
+
+        <!-- Indonesian -->
+        <fieldType name="text_id" class="solr.TextField" positionIncrementGap="100">
+            <analyzer>
+                <tokenizer class="solr.StandardTokenizerFactory"/>
+                <filter class="solr.LowerCaseFilterFactory"/>
+                <filter class="solr.StopFilterFactory" ignoreCase="true" words="lang/stopwords_id.txt"/>
+                <!-- for a less aggressive approach (only inflectional suffixes), set stemDerivational to false -->
+                <filter class="solr.IndonesianStemFilterFactory" stemDerivational="true"/>
+            </analyzer>
+        </fieldType>
+
+        <!-- Italian -->
+        <fieldType name="text_it" class="solr.TextField" positionIncrementGap="100">
+            <analyzer>
+                <tokenizer class="solr.StandardTokenizerFactory"/>
+                <!-- removes l', etc -->
+                <filter class="solr.ElisionFilterFactory" ignoreCase="true" articles="lang/contractions_it.txt"/>
+                <filter class="solr.LowerCaseFilterFactory"/>
+                <filter class="solr.StopFilterFactory" ignoreCase="true" words="lang/stopwords_it.txt"
+                        format="snowball"/>
+                <filter class="solr.ItalianLightStemFilterFactory"/>
+                <!-- more aggressive: <filter class="solr.SnowballPorterFilterFactory" language="Italian"/> -->
+            </analyzer>
+        </fieldType>
+
+        <!-- Japanese using morphological analysis (see text_cjk for a configuration using bigramming)
+
+             NOTE: If you want to optimize search for precision, use default operator AND in your query
+             parser config with <solrQueryParser defaultOperator="AND"/> further down in this file.  Use
+             OR if you would like to optimize for recall (default).
+        -->
+        <fieldType name="text_ja" class="solr.TextField" positionIncrementGap="100" autoGeneratePhraseQueries="false">
+            <analyzer>
+                <!-- Kuromoji Japanese morphological analyzer/tokenizer (JapaneseTokenizer)
+
+                     Kuromoji has a search mode (default) that does segmentation useful for search.  A heuristic
+                     is used to segment compounds into its parts and the compound itself is kept as synonym.
+
+                     Valid values for attribute mode are:
+                        normal: regular segmentation
+                        search: segmentation useful for search with synonyms compounds (default)
+                      extended: same as search mode, but unigrams unknown words (experimental)
+
+                     For some applications it might be good to use search mode for indexing and normal mode for
+                     queries to reduce recall and prevent parts of compounds from being matched and highlighted.
+                     Use <analyzer type="index"> and <analyzer type="query"> for this and mode normal in query.
+
+                     Kuromoji also has a convenient user dictionary feature that allows overriding the statistical
+                     model with your own entries for segmentation, part-of-speech tags and readings without a need
+                     to specify weights.  Notice that user dictionaries have not been subject to extensive testing.
+
+                     User dictionary attributes are:
+                               userDictionary: user dictionary filename
+                       userDictionaryEncoding: user dictionary encoding (default is UTF-8)
+
+                     See lang/userdict_ja.txt for a sample user dictionary file.
+
+                     Punctuation characters are discarded by default.  Use discardPunctuation="false" to keep them.
+
+                     See http://wiki.apache.org/solr/JapaneseLanguageSupport for more on Japanese language support.
+                  -->
+                <tokenizer class="solr.JapaneseTokenizerFactory" mode="search"/>
+                <!--<tokenizer class="solr.JapaneseTokenizerFactory" mode="search" userDictionary="lang/userdict_ja.txt"/>-->
+                <!-- Reduces inflected verbs and adjectives to their base/dictionary forms (辞書形) -->
+                <filter class="solr.JapaneseBaseFormFilterFactory"/>
+                <!-- Removes tokens with certain part-of-speech tags -->
+                <filter class="solr.JapanesePartOfSpeechStopFilterFactory" tags="lang/stoptags_ja.txt"/>
+                <!-- Normalizes full-width romaji to half-width and half-width kana to full-width (Unicode NFKC subset) -->
+                <filter class="solr.CJKWidthFilterFactory"/>
+                <!-- Removes common tokens typically not useful for search, but have a negative effect on ranking -->
+                <filter class="solr.StopFilterFactory" ignoreCase="true" words="lang/stopwords_ja.txt"/>
+                <!-- Normalizes common katakana spelling variations by removing any last long sound character (U+30FC) -->
+                <filter class="solr.JapaneseKatakanaStemFilterFactory" minimumLength="4"/>
+                <!-- Lower-cases romaji characters -->
+                <filter class="solr.LowerCaseFilterFactory"/>
+            </analyzer>
+        </fieldType>
+
+        <!-- Latvian -->
+        <fieldType name="text_lv" class="solr.TextField" positionIncrementGap="100">
+            <analyzer>
+                <tokenizer class="solr.StandardTokenizerFactory"/>
+                <filter class="solr.LowerCaseFilterFactory"/>
+                <filter class="solr.StopFilterFactory" ignoreCase="true" words="lang/stopwords_lv.txt"/>
+                <filter class="solr.LatvianStemFilterFactory"/>
+            </analyzer>
+        </fieldType>
+
+        <!-- Dutch -->
+        <fieldType name="text_nl" class="solr.TextField" positionIncrementGap="100">
+            <analyzer>
+                <tokenizer class="solr.StandardTokenizerFactory"/>
+                <filter class="solr.LowerCaseFilterFactory"/>
+                <filter class="solr.StopFilterFactory" ignoreCase="true" words="lang/stopwords_nl.txt"
+                        format="snowball"/>
+                <filter class="solr.StemmerOverrideFilterFactory" dictionary="lang/stemdict_nl.txt" ignoreCase="false"/>
+                <filter class="solr.SnowballPorterFilterFactory" language="Dutch"/>
+            </analyzer>
+        </fieldType>
+
+        <!-- Norwegian -->
+        <fieldType name="text_no" class="solr.TextField" positionIncrementGap="100">
+            <analyzer>
+                <tokenizer class="solr.StandardTokenizerFactory"/>
+                <filter class="solr.LowerCaseFilterFactory"/>
+                <filter class="solr.StopFilterFactory" ignoreCase="true" words="lang/stopwords_no.txt"
+                        format="snowball"/>
+                <filter class="solr.SnowballPorterFilterFactory" language="Norwegian"/>
+                <!-- less aggressive: <filter class="solr.NorwegianLightStemFilterFactory" variant="nb"/> -->
+                <!-- singular/plural: <filter class="solr.NorwegianMinimalStemFilterFactory" variant="nb"/> -->
+                <!-- The "light" and "minimal" stemmers support variants: nb=Bokmål, nn=Nynorsk, no=Both -->
+            </analyzer>
+        </fieldType>
+
+        <!-- Portuguese -->
+        <fieldType name="text_pt" class="solr.TextField" positionIncrementGap="100">
+            <analyzer>
+                <tokenizer class="solr.StandardTokenizerFactory"/>
+                <filter class="solr.LowerCaseFilterFactory"/>
+                <filter class="solr.StopFilterFactory" ignoreCase="true" words="lang/stopwords_pt.txt"
+                        format="snowball"/>
+                <filter class="solr.PortugueseLightStemFilterFactory"/>
+                <!-- less aggressive: <filter class="solr.PortugueseMinimalStemFilterFactory"/> -->
+                <!-- more aggressive: <filter class="solr.SnowballPorterFilterFactory" language="Portuguese"/> -->
+                <!-- most aggressive: <filter class="solr.PortugueseStemFilterFactory"/> -->
+            </analyzer>
+        </fieldType>
+
+        <!-- Romanian -->
+        <fieldType name="text_ro" class="solr.TextField" positionIncrementGap="100">
+            <analyzer>
+                <tokenizer class="solr.StandardTokenizerFactory"/>
+                <filter class="solr.LowerCaseFilterFactory"/>
+                <filter class="solr.StopFilterFactory" ignoreCase="true" words="lang/stopwords_ro.txt"/>
+                <filter class="solr.SnowballPorterFilterFactory" language="Romanian"/>
+            </analyzer>
+        </fieldType>
+
+        <!-- Russian -->
+        <fieldType name="text_ru" class="solr.TextField" positionIncrementGap="100">
+            <analyzer>
+                <tokenizer class="solr.StandardTokenizerFactory"/>
+                <filter class="solr.LowerCaseFilterFactory"/>
+                <filter class="solr.StopFilterFactory" ignoreCase="true" words="lang/stopwords_ru.txt"
+                        format="snowball"/>
+                <filter class="solr.SnowballPorterFilterFactory" language="Russian"/>
+                <!-- less aggressive: <filter class="solr.RussianLightStemFilterFactory"/> -->
+            </analyzer>
+        </fieldType>
+
+        <!-- Swedish -->
+        <fieldType name="text_sv" class="solr.TextField" positionIncrementGap="100">
+            <analyzer>
+                <tokenizer class="solr.StandardTokenizerFactory"/>
+                <filter class="solr.LowerCaseFilterFactory"/>
+                <filter class="solr.StopFilterFactory" ignoreCase="true" words="lang/stopwords_sv.txt"
+                        format="snowball"/>
+                <filter class="solr.SnowballPorterFilterFactory" language="Swedish"/>
+                <!-- less aggressive: <filter class="solr.SwedishLightStemFilterFactory"/> -->
+            </analyzer>
+        </fieldType>
+
+        <!-- Thai -->
+        <fieldType name="text_th" class="solr.TextField" positionIncrementGap="100">
+            <analyzer>
+                <tokenizer class="solr.StandardTokenizerFactory"/>
+                <filter class="solr.LowerCaseFilterFactory"/>
+                <filter class="solr.ThaiWordFilterFactory"/>
+                <filter class="solr.StopFilterFactory" ignoreCase="true" words="lang/stopwords_th.txt"/>
+            </analyzer>
+        </fieldType>
+
+        <!-- Turkish -->
+        <fieldType name="text_tr" class="solr.TextField" positionIncrementGap="100">
+            <analyzer>
+                <tokenizer class="solr.StandardTokenizerFactory"/>
+                <filter class="solr.TurkishLowerCaseFilterFactory"/>
+                <filter class="solr.StopFilterFactory" ignoreCase="false" words="lang/stopwords_tr.txt"/>
+                <filter class="solr.SnowballPorterFilterFactory" language="Turkish"/>
+            </analyzer>
+        </fieldType>
+    </types>
+</schema>

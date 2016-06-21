@@ -1,0 +1,34 @@
+<cons>
+  <con>
+    <firtsname></firtsname>
+    <lastname></lastname>
+    <companyname></companyname>
+    <email></email>
+    <consumertype></consumertype>
+    <address1></address1>
+    <address2></address2>
+    <city></city>
+    <state></state>
+    <zip></zip>
+    <country></country>
+    <worknumber></worknumber>
+    <workcountrycode></workcountrycode>
+    <workareacode></workareacode>
+    <workphonenumber></workphonenumber>
+    <workphoneextension></workphoneextension>
+    <faxnumber></faxnumber>
+    <faxareacode></faxareacode>
+    <faxphonenumber></faxphonenumber>
+    <homenumber></homenumber>
+    <homeareacode></homeareacode>
+    <homephonenumber></homephonenumber>
+    <cellnumber></cellnumber>
+    <cellareacode></cellareacode>
+    <cellphonenumber></cellphonenumber>
+    <agerange></agerange>
+    <militarybranch></militarybranch>
+    <militarystatus></militarystatus>
+    <militaryinstallation></militaryinstallation>
+    <militarypaygrade></militarypaygrade>
+  </con>
+</cons>

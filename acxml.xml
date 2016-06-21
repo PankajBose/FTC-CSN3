@@ -1,0 +1,19 @@
+<acs>
+  <ac>
+    <name></name>
+    <type></type>
+    <address1></address1>
+    <address1></address1>
+    <city></city>
+    <state></state>
+    <zip></zip>
+    <country></country>
+    <email></email>
+    <url></url>
+    <countrycode></countrycode>
+    <areacode></areacode>
+    <phonenumber></phonenumber>
+    <phoneext></phoneext>
+    <replname></replame>
+  </ac>
+</acs>

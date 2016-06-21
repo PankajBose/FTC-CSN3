@@ -1,0 +1,39 @@
+http://ftcdevcdh04.lmbps.com:8983/solr/CIS_shard1_replica2/select?q=*:*&fq={!parent which='type_s:record'} content:ALEXANDRIA AND type_s:primarycompany & fq={!parent which='type_s:record'} type_s:consumer&fl=*,[child parentFilter=type_s:record ]&wt=xml&indent=true&facet=true&facet.field=primarycompanyname
+--Works for primarycompany--
+
+
+http://ftcdevcdh04.lmbps.com:8983/solr/CIS_shard1_replica2/select?q=content:ALEXANDRIA&fl=*,[child parentFilter=type_s:record ],[parent childFilter=type_s:primarycompany ]&wt=xml&indent=true&facet=true&facet.field=primarycompanyname
+
+
+http://ftcdevcdh04.lmbps.com:8983/solr/CIS_shard1_replica2/select?q=*:*&fq={!parent which='type_s:record'} type_s:primarycompany&fq={!parent which='type_s:record'} type_s:consumer&fl=*,[child parentFilter=type_s:record ] &wt=xml&indent=true&facet=true&facet.field=primarycompanyname
+
+
+http://ftcdevcdh04.lmbps.com:8983/solr/CIS_shard1_replica2/select?q=*:*&fq={!parent which='type_s:record'} type_s:primarycompany&fq={!parent which='type_s:record'} type_s:consumer&fl=*,[child parentFilter=type_s:record ]&wt=xml&indent=true&facet=true&facet.field=primarycompanyname
+
+http://ftcdevcdh04.lmbps.com:8983/solr/CIS_shard1_replica1/select?q=content:ALEXANDRIA&fq={!parent which='type_s:record'} type_s:primarycompany&fq={!parent which='type_s:record'} type_s:consumer&fl=*,[child parentFilter=type_s:record ]&wt=xml&indent=true&facet=true&facet.field=primarycompanyname&facet.mincount=1
+
+
+http://ftcdevcdh04.lmbps.com:8983/solr/CIS2/select?q=content:ALEXANDRIA&fq={!parent which='type_s:record'} type_s:primarycompany&fq={!parent which='type_s:record'} type_s:consumer&fl=*,[child parentFilter=type_s:record ]&wt=xml&indent=true&facet=true&facet.field=primarycompanyname&facet.mincount=1
+
+
+
+
+
+http://ftcdevcdh04.lmbps.com:8983/solr/CIS_shard1_replica2/select?q=content:ALEXANDRIA&fq={!child of='type_s:record'} type_s:primarycompany&fq={!child of='type_s:record'} type_s:consumer&fl=*,[child parentFilter=type_s:record ]&wt=xml&indent=true&facet=true&facet.field=primarycompanyname
+--Not Good --
+
+http://ftcdevcdh04.lmbps.com:8983/solr/CIS_shard1_replica2/select?q=content:ALEXANDRIA&fq={!child of='type_s:record'}&fl=*,[child parentFilter=type_s:record ]&wt=xml&indent=true&facet=true&facet.field=primarycompanyname
+
+http://ftcdevcdh04.lmbps.com:8983/solr/CIS_shard1_replica2/select?q=content:ALEXANDRIA&fl=*,[child parentFilter=type_s:record ]&wt=xml&indent=true&facet=true&facet.field=primarycompanyname
+
+
+http://ftcdevcdh04.lmbps.com:8983/solr/CIS_shard1_replica2/select?q=*:*&fq={!child of='type_s:record'} type_s:primarycompany&fq={!parent which='type_s:record'} type_s:consumer&fl=*,[child parentFilter=type_s:record ]&wt=xml&indent=true&facet=true&facet.field=primarycompanyname
+
+http://ftcdevcdh04.lmbps.com:8983/solr/CIS_shard1_replica2/select?q=primarycompanycity:ALEXANDRIA&fl=*,[parent childFilter=type_s:primarycompany ]
+
+
+http://ftcdevcdh04.lmbps.com:8983/solr/CIS_shard1_replica2/select?q=content:"A C Towing"&fq={!parent which='type_s:record'} type_s:primarycompany&fq={!parent which='type_s:record'} type_s:consumer&fl=*,[child parentFilter=type_s:record ]&wt=xml&indent=true&facet=true&facet.field=primarycompanyname
+--0 result--
+
+
+http://ftcdevcdh04.lmbps.com:8983/solr/CIS_shard1_replica2/select?q=content:"UNITED STATES PATENT AND TRADEMARK OFFICE"&fq={!parent which='type_s:record'} type_s:primarycompany&fq={!parent which='type_s:record'} type_s:consumer&fl=*,[child parentFilter=type_s:record ]&wt=xml&indent=true&facet=true&facet.field=primarycompanyname

@@ -1,0 +1,117 @@
+USE [CIS_OLTP_QA]
+GO
+/****** Object:  StoredProcedure [dbo].[LOAD_FAST_CIS_TEMPDATARECORD]    Script Date: 06/01/2016 17:50:27 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+/*    
+Created By: Not Known    
+Created Date: Not Known    
+    
+Modification: jvelumani, 10-jul-15  
+To address the docacl issue for econsumer users.  
+  
+Modification: jvelumani, 3-Sep-15  
+Added a function to determine the docacl for eConsumer Cross Border complaint change. 
+  
+*/      
+  
+    
+ALTER PROCEDURE [dbo].[LOAD_FAST_CIS_TEMPDATARECORD] AS    
+    
+BEGIN    
+    
+OPEN SYMMETRIC KEY CRSSConsumerKey DECRYPTION BY CERTIFICATE CRSSConsumerCert    
+    
+select a.RecordID    
+ , a.Referencenum    
+ , isnull(b.Description, '') ContactType    
+ , a.InternetRelatedFlag InternetRelatedFlag    
+ , a.HotItemFlag tsrrelatedflag    
+ , isnull(c.name, '') LanguageName    
+ , isnull(d.name, '') Source    
+ , case    
+  when a.RecordSubType = 'DC' then 'Y'    
+  else 'N'    
+ end DNCFlag    
+ , isnull(a.Comments, '') Comments    
+ , isnull(a.CreatedDate, null) CreatedDate    
+ , isnull(a.CreatedBy, '') CreatedBy    
+ , isnull(a.UpdatedBy, '') UpdatedBy    
+ , isnull(a.UpdatedDate, null) UpdatedDate    
+ , isnull(e.OrgName, '') OrgName    
+ , dbo.fun_CISDataRecord_getMoneyPaid(a.recordid) MoneyPaid    
+ , isnull(g.Name, '') AgencyContact    
+ , isnull(i.Name, '') InitialContact    
+ , isnull(k.Name, '') InitialResponse    
+ , isnull(f.ContactDate, null) ComplaintDate    
+ , isnull(h.ContactDate, null) TransactionDate    
+ , isnull(a.OrganizationID, '') OrgID    
+ , dbo.fun_CISDataRecord_getAmountDetails(a.RecordID, 2) AmountRequested    
+ , dbo.fun_CISDataRecord_getAmountDetails(a.RecordID, 1) AmountPaid    
+ , dbo.fun_CISDataRecord_getPaymentMethod(a.RecordID) PaymentMethod    
+ , dbo.fun_CISDataRecord_getProdServiceDesc1(a.RecordID) ProdServiceDesc    
+ , dbo.fun_CISDataRecord_getStatute(a.RecordID) Statute    
+ , dbo.fun_CISDataRecord_getViolation(a.RecordID) Violation    
+ , dbo.fun_CISDataRecord_getRepLastName1(a.RecordID) RepresentativeLastName    
+ , dbo.fun_CISDataRecord_getRepFirstName1(a.RecordID) RepresentativeFirstName    
+ , dbo.fun_CISDataRecord_getRepTitle(a.RecordID) RepresentativeTitle    
+ , dbo.fun_CISDataRecord_getTopic(a.RecordID) Topic    
+ --, case      
+ -- when a.OrganizationID = 'PU15' and a.RecordTypeCode in ('1', '3') then 'FAST-CIS-FTC FAST-CIS-LMS FAST-CIS-DLE FAST-CIS-FLE'      
+ -- when a.HotItemFlag='Y' AND a.RecordTypeCode in ('1', '3', '45') then 'FAST-CIS-FTC FAST-CIS-LMS FAST-CIS-DLE FAST-CIS-CLE FAST-CIS-ALE'      
+ -- when a.RecordTypeCode in ('1', '3', '45') then 'FAST-CIS-FTC FAST-CIS-LMS FAST-CIS-DLE'      
+ -- else 'FAST-CIS-FTC FAST-CIS-LMS'      
+ --end as docacl      
+ , dbo.[fun_CISRecord_DocACL](a.RecordID) docacl
+ , case    
+  when a.RecordTypeCode = 1 or a.RecordTypeCode = 3 or a.RecordTypeCode = 45 then 'Y'    
+  else 'N'    
+ end quicksearchflag    
+ , isnull(a.ExternalRefNumber, '') externalrefnumber    
+ , isnull(a.CRADispute_Flag, '') complaintagainstcreditbureau    
+ , isnull(a.CRADispute_45DaysFlag, '') complaintagainstcreditbureau45days    
+ , dbo.udfFASTCISGenerateAssociatedCompanyXML (a.RecordID) acxml    
+ , dbo.udfFASTCISGenerateConsumerXML(a.RecordID) conxml    
+ , dbo.udfFASTCISGeneratePrimaryCompanyXML (a.RecordID) pcxml    
+ , dbo.udfFASTGenerateRepNameXML (a.RecordID) repxml    
+ , dbo.udfFASTCISGeneratePrimaryCompanyAddressXML (a.RecordID) pcaddressxml    
+ , isnull(a.CRAResponded, '') CRAResponded    
+ , isnull(a.CRAResolved, '') CRAResolved    
+ , isnull(a.MailImageFileName, '') as MailImageFileName    
+ , isnull(a.SoldierMemberFlag, '') as MilitaryMember    
+ , case    
+  when a.resolutionflag = 1 then 'y'    
+  when a.resolutionflag = 0 then 'n'    
+  else ''    
+ end as ComplaintResolutionFlag    
+ , ISNULL(a.resolutiontext, '') as complaintresolutiontext    
+ , ad.CrossBorderFlag CrossBorderFlag    
+    
+from DataRecord a (nolock)    
+left join DataRecord_Details ad (nolock) on a.RecordID = ad.RecordID    
+left join RF_RecordType b (nolock) on a.RecordTypeCode = b.RecordTypeCode     
+left join RF_LanguageCode c (nolock) on a.LanguageCode = c.LanguageCode    
+left join RF_DataSource d (nolock) on a.DataSourceCode = d.DataSourceCode    
+left join Organization e (nolock) on e.OrganizationID=a.OrganizationID    
+left join DataRecord_Contacts f (nolock) on a.RecordID = f.RecordID    
+ and f.ContactTypeCode = 'A'    
+left join RF_ContactMethod g (nolock) on g.ContactMethodCode = f.ContactMethodCode    
+left join DataRecord_Contacts h (nolock) on a.RecordID = h.RecordID    
+ and h.ContactTypeCode = 'C'    
+left join RF_ContactMethod i (nolock) on i.ContactMethodCode = h.ContactMethodCode    
+left join DataRecord_Contacts j (nolock) on a.RecordID = j.RecordID    
+ and j.ContactTypeCode='R'    
+left join RF_ContactMethod k (nolock) on k.ContactMethodCode = j.ContactMethodCode    
+--join consumer(nolock) con on a.recordid=con.recordid    
+--join temp_reindex_20130429_cis temp on temp.recordid = a.recordid    
+    
+where isnull(a.RecordSubType, '') in ('EF', 'CF', 'RF', 'DC')    
+and a.RecordTypeCode not in (9999, 6)    
+and a.RecordStatus='A'    
+--and a.CreatedDate >='1/1/2012'    
+    
+close symmetric key CRSSConsumerKey;    
+    
+END 
